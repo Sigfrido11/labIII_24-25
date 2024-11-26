@@ -1,0 +1,5 @@
+tavolo 5
+a quelle colorate tranne nero puoi mettere la tensione, al nero devo portare il ground sula piastra, le linee continue colorate sulle piastre la linea rossa sotto raggruppa le cose a 5, solo la prima riga è collegata tutta. ochio il potenziometro va in orizzontale. usa nel generatore quello a sx che eroga 5V fissi
+devi metterti al segnale di massa vera, se no fai loop di massa che non vedi subito, devi sapere qual'è la massa di riferimento di tutto.  mi raccomando attaccati sempre al simbolo del ground anche se lo trovi in più punti preferisci sempre dove c'è il simbolo
+convenzione potenziometri 10+ numero (il numero indica il numero di zeri da aggiungere) (da il risultato in ohm)
+scegli i valori in modo da allineare le cose sull'oscilloscopio poichè è il più difficile da leggere
