@@ -1,14 +1,14 @@
 # Fdb version 4
-["biber relazione"] 0 "relazione.bcf" "relazione.bbl" "relazione" 0 0
+["biber relazione"] 0 "relazione.bcf" "relazione.bbl" "relazione" 1733078631.02518 0
   "citations.bib" 0 -1 0 ""
   "relazione.bcf" 0 -1 0 "pdflatex"
   (generated)
   "relazione.bbl"
   "relazione.blg"
   (rewritten before read)
-["pdflatex"] 1732906998.34898 "/home/giuseppe/Scrivania/giuseppe/uni/terzo_anno/prove_lab/seconda_prova/relazione.tex" "relazione.pdf" "relazione" 1732907001.03872 2
-  "/etc/texmf/web2c/texmf.cnf" 1726391678.49482 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/giuseppe/Scrivania/giuseppe/uni/terzo_anno/prove_lab/seconda_prova/relazione.tex" 1732906995.06384 21036 405710c6bc71ffc90205e36ae47d0518 ""
+["pdflatex"] 1733078629.74876 "/home/giuseppe/Desktop/Giuseppe/università/terzo_anno/prove_laboratorio/seconda_prova/relazione.tex" "relazione.pdf" "relazione" 1733078631.02562 0
+  "/etc/texmf/web2c/texmf.cnf" 1726390593.49884 475 c0e671620eb5563b2130f56340a5fde8 ""
+  "/home/giuseppe/Desktop/Giuseppe/università/terzo_anno/prove_laboratorio/seconda_prova/relazione.tex" 1733078626.59145 21951 4515fb3b9787cfd206a782c8da3d1552 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1728.tfm" 1136768653 1536 e079ec806f4d1916bef9ddc10128af55 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -36,7 +36,6 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1136768653 1120 8b7d695260f3cff42e636090a8002094 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmti10.tfm" 1136768653 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmti8.tfm" 1136768653 1504 1747189e0441d1c18f3ea56fafc1c480 ""
-  "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm" 1136768653 768 1321e9409b4137d6fb428ac9dc956269 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1248133631 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1248133631 32080 340ef9bf63678554ee606688e7b5339d ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
@@ -49,7 +48,6 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1248133631 37944 359e864bd06cde3b1cf57bb20757fb06 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb" 1248133631 35660 fb24af7afbadb71801619f1415838111 ""
-  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb" 1248133631 31099 c85edf1dd5b9e826d67c9c7293b6786c ""
   "/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/share/texlive/texmf-dist/tex/generic/babel-italian/italian.ldf" 1704400413 11324 231db2406347b14c88e42443ebaa8d26 ""
   "/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty" 1704662920 150008 7a05b0fdc0167c04e192003e780ab195 ""
@@ -180,7 +178,6 @@
   "/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty" 1601326656 274 5ae372b7df79135d240456a1c6f2cf9a ""
   "/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty" 1601326656 325 f9f16d12354225b7dd52a3321f085955 ""
   "/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty" 1704919444 103614 1ca07ac773e16c641eabdcbf98c7511d ""
-  "/usr/share/texlive/texmf-dist/tex/latex/tools/.tex" 1686341992 1386 e12910b1679ec687be15153859582c13 ""
   "/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty" 1700689882 7500 db31c3d04f8bc9010e47a5efbbace9ff ""
   "/usr/share/texlive/texmf-dist/tex/latex/trimspaces/trimspaces.sty" 1253232110 1380 971a51b00a14503ddf754cab24c3f209 ""
   "/usr/share/texlive/texmf-dist/tex/latex/url/url.sty" 1388531844 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
@@ -189,15 +186,18 @@
   "/usr/share/texlive/texmf-dist/tex/latex/zref/zref-base.sty" 1694723124 20785 f7d1133a287929598a897c93f8f4c44b ""
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1636152094 2900 1537cc8184ad1792082cd229ecc269f4 ""
-  "/usr/share/texmf/fonts/type1/public/cm-super/sfrm1728.pfb" 1731323526.46794 131438 3aa300b3e40e5c8ba7b4e5c6cebc5dd6 ""
+  "/usr/share/texmf/fonts/type1/public/cm-super/sfrm1728.pfb" 1731250820.64748 131438 3aa300b3e40e5c8ba7b4e5c6cebc5dd6 ""
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
-  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1731323549.62859 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
-  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1731323634 8215718 b451714fbb0cc3d9fc093e47496bd79b ""
-  "pictures/circuito.png" 0 -1 0 ""
-  "pictures/pnp.png" 0 -1 0 ""
-  "relazione.aux" 1732907000.50584 2368 29299ae16f809bd1a79b8b48fb498e52 "pdflatex"
+  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1731250855.60173 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1731250931 8215260 80bc9ce068a03304d732323bc4f9cda1 ""
+  "pictures/apparato.png" 1733077280.26794 865658 a96726bf47b884e460d291e8a831fe75 ""
+  "pictures/circuito.png" 1733078544.55225 29067 9a1cf6c14fd2e504228c76e695999a7b ""
+  "pictures/g_tot_mean.png" 1733077160.53665 15461 66145199ad5209d8a33cc8967cff2fa9 ""
+  "pictures/pnp.png" 1733078548.02024 38902 4eeaaf011e9242e38578e901b15d15fb ""
+  "relazione.aux" 1733078630.83448 3174 afe63cc39d79a5e715bed252c07952d1 "pdflatex"
   "relazione.bbl" 0 -1 0 "biber relazione"
-  "relazione.tex" 1732906995.06384 21036 405710c6bc71ffc90205e36ae47d0518 ""
+  "relazione.run.xml" 1733078630.83848 2345 2d81b701017b44654c2b485549af2b7c "pdflatex"
+  "relazione.tex" 1733078626.59145 21951 4515fb3b9787cfd206a782c8da3d1552 ""
   (generated)
   "relazione.aux"
   "relazione.bcf"

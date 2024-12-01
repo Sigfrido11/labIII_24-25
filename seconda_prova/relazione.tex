@@ -82,16 +82,16 @@ Durante l'esperimento si sono usati un multimetro FLUKE 77 IV per le misure di c
 
 \begin{figure}
     \centering
-    \begin{minipage}{0.49\textwidth}
-        \includegraphics[width=0.5\linewidth]{}
-        \caption{}
+    \begin{minipage}{0.5\textwidth}
+        \includegraphics[width=1\linewidth]{pictures/apparato.png}
+          \caption{\textit{\textcolor{gray}{L'immagine mostra l'apparato sperimentale impiegato, con l'oscilloscopio, il multimetro, la breadboard e il generatore di tensione. }}}
         \label{fig::apparato}
     \end{minipage}
     \hfill
     \begin{minipage}{0.49\textwidth}
         \includegraphics[width=0.6\linewidth]{pictures/circuito.png}
         \centering
-        \caption{Schema del circuito usato nell'esperimento. Il simbolo cerchiato rappresenta il transistor pnp, mentre $R_B$ e $R_C$ sono i potenziometri usati per modulare tensione e corrente rispettivamente su base (B) e collettore (C). L'emettitore (E) collegato al ground è il terminale comune.}
+        \caption{\textit{\textcolor{gray}{Schema del circuito usato nell'esperimento. Il simbolo cerchiato rappresenta il transistor pnp, mentre $R_B$ e $R_C$ sono i potenziometri usati per modulare tensione e corrente rispettivamente su base (B) e collettore (C). L'emettitore (E) collegato al ground è il terminale comune.}}}
         \label{fig::circuito}
     \end{minipage}
 \end{figure}
@@ -140,10 +140,9 @@ Nelle tabelle \ref{tab::dati_100} e \ref{tab::dati_200} si riportano le misure d
 0.40 \pm 0.02 f.s. 0.1 & 14.89 \pm 0.14 \\ 
 0.30 \pm 0.01 f.s. 0.05 & 14.15 \pm 0.13 \\ 
 0.20 \pm 0.01 f.s. 0.05 & 11.56 \pm 0.11 \\ 
-0.10 \pm 0.00 f.s. 0.02 & 3.28 \pm 0.040 \\ 
+0.10 \pm 0.00 f.s. 0.02 & 3.28 \pm 0.040 \\
 \hline
-\label{tab::dati_100}
-\end{array}
+\end{array} \label{tab::dati_100}
 \]
     \end{minipage}
     \hfill %lui mette lo spazio in mezzo
@@ -175,8 +174,8 @@ Nelle tabelle \ref{tab::dati_100} e \ref{tab::dati_200} si riportano le misure d
 0.30 \pm 0.01 f.s. 0.05 & 22.92 \pm 0.21 \\ 
 0.20 \pm 0.01 f.s. 0.05 & 18.11 \pm 0.17 \\ 
 0.10 \pm 0.00 f.s. 0.02 & 5.83 \pm 0.062 \\ \hline
-\label{tab::dati_200}
-\end{array}
+
+\end{array}\label{tab::dati_200}
 \]    
     \end{minipage}
 
@@ -187,19 +186,39 @@ Il multimetro aveva una risoluzione di 1 $\mathrm{mV}$ sulle misure di potenzial
 
 \subsection{Analisi Dati} 
 
-Nella figura \ref{graph} si riporta la curva di caratteristica in uscita del transistor BJT. Si nota complessivamente un buon riscontro visivo soprattutto per quanto riguarda la curva con una corrente di base di $I_100$. Invece per quanto riguarda la curva con $I_100$ si possono osservare delle leggere fluttuazioni rispetto al valore corrispondente nella linea di fit.
+Nella figura \ref{graph::curve} si riportano la curve caratteristiche in uscita del transistor BJT. Si nota complessivamente un buon riscontro visivo soprattutto per quanto riguarda la curva con una corrente di base di $I_100$. Invece per quanto riguarda la curva con $I_100$ si possono osservare delle leggere fluttuazioni rispetto al valore corrispondente nella linea di fit.
 
 Nella tabella \ref{tab::risultati} si riportano i risultati dell'analisi mediante fit per i valori della tensione di Early, la resistenza in uscita ed il guadagno di corrente per entrambe le caratteristiche
 
+\begin{figure}[ht]
+\centering
+    \includegraphics[width=0.7\linewidth]{pictures/g_tot_mean.png}
+    \caption{\textit{\textcolor{gray}{La foto mostra le due curve di calibrazione a confronto, si sottolinea come da convenzione l'asse delle ascisse è riportato col segno invertito}}}
+    \label{graph::curve} 
+\end{figure}
+
+
+\begin{table}[htbp] % Aggiunto ambiente table per la numerazione e il posizionamento
 \begin{center}
-\begin{tabular}{ c c c }
- risultati & I = 100 $\mu$A & I = 200 $\mu$A \\ 
- $V_{Early}$ & 19.0 $\pm$ 1.1 mV & 14.11 $\pm$ 0.76 V \\  
- b & 1.264 $\pm$ 0.065 k$\Omega$ & 0.502 $\pm$ 0.024 k$\Omega$ \\
- g & 0.791 $\pm$ 0.041 & 1.994 $\pm$ 0.096 \\
- $beta$ & 1.9441 $\pm$ 0.0071 \\
-\end{tabular} \label{tab::risultati}
+\begin{tabular}{ |c|c|c| }
+\hline
+risultati & I = 100 $\mu$A & I = 200 $\mu$A \\ 
+\hline
+$V_{Early}$ & 19.0 $\pm$ 1.1 mV & 14.11 $\pm$ 0.76 V \\  
+\hline
+b & 1.264 $\pm$ 0.065 k$\Omega$ & 0.502 $\pm$ 0.024 k$\Omega$ \\
+\hline
+g & 0.791 $\pm$ 0.041 mS & 1.994 $\pm$ 0.096 mS \\
+\hline
+$\beta$ & \multicolumn{2}{|c|}{1.9441 $\pm$ 0.0071} \\
+\hline
+\end{tabular}
+\caption{\textit{\textcolor{gray}{La tabella mostra i risultati ottenuti dai fit. In ordine dall'alto vengono riportati la tensione di Early, la resistenza in uscita, la conduttanza e il fattore di guadagno.}}}
+\label{tab::risultati}
 \end{center}
+\end{table}
+
+
 
 \section{Conclusioni}
 Per la caratteristica con tensione di base di $I_{100}$ si sono ottenuti dai fit ... Come atteso il valore..

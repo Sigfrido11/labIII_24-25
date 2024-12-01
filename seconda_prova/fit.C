@@ -59,6 +59,12 @@ void sel_fit(const char *name_100, const char *name_200) {
   mg->SetTitle(" ");
   mg->GetXaxis()->SetTitle("- V (bc) (V)");
   mg->GetYaxis()->SetTitle("I (mA)");
+  mg->GetYaxis()->SetTitleOffset(0.7);
+  mg->GetXaxis()->SetTitleOffset(0.85);
+  mg->GetXaxis()->SetTitleSize(0.06);
+  mg->GetYaxis()->SetTitleSize(0.06);
+  mg->GetXaxis()->SetLabelSize(0.06);
+  mg->GetYaxis()->SetLabelSize(0.06);
 
   const char *labels[2] = {"I=0.20 mA", "I=0.10 mA"};
   double x_100, y_100, x_200, y_200;
@@ -71,25 +77,47 @@ void sel_fit(const char *name_100, const char *name_200) {
   label_200->SetTextSize(0.05);
 
   // Calcolo di V Early aka a
-  double Early_200 =
-      std::abs(fitLin_200->GetParameter(0) / fitLin_200->GetParameter(1));
-  double EarlyError_200 = std::sqrt(
-      std::pow(fitLin_200->GetParError(0) / fitLin_200->GetParameter(1), 2) +
-      std::pow(fitLin_200->GetParError(1) * fitLin_200->GetParameter(0) /
-                   std::pow(fitLin_200->GetParameter(1), 2),
-               2) -
-      2 * fitLin_200->GetParameter(0) * cov_10_200 /
-          std::pow(fitLin_200->GetParameter(1), 3));
+  const double intercept_200 = fitLin_200->GetParameter(0);
+  const double slope_200 = fitLin_200->GetParameter(1);
+  const double interceptError_200 = fitLin_200->GetParError(0);
+  const double slopeError_200 = fitLin_200->GetParError(1);
+ 
+  const double Early_200 = std::abs(intercept_200 / slope_200);
 
-  double Early_100 =
-      std::abs(fitLin_100->GetParameter(0) / fitLin_100->GetParameter(1));
-  double EarlyError_100 = std::sqrt(
-      std::pow(fitLin_100->GetParError(0) / fitLin_100->GetParameter(1), 2) +
-      std::pow(fitLin_100->GetParError(1) * fitLin_100->GetParameter(0) /
-                   std::pow(fitLin_100->GetParameter(1), 2),
-               2) -
-      2 * fitLin_100->GetParameter(0) * cov_10_100 /
-          std::pow(fitLin_100->GetParameter(1), 3));
+  // Calcolo dell'errore di Early_200
+  const double earlyErrorTerm1 = std::pow(interceptError_200 / slope_200,
+                                    2); // (Errore intercetta / pendenza)^2
+  const double earlyErrorTerm2 =
+      std::pow(intercept_200 * slopeError_200 / std::pow(slope_200, 2),
+               2); // (Errore pendenza * intercetta / pendenza^2)^2
+  const double earlyErrorTerm3 = -2 * intercept_200 * cov_10_200 /
+                           std::pow(slope_200, 3); // Termino di covarianza
+
+  const double EarlyError_200 =
+      std::sqrt(earlyErrorTerm1 + earlyErrorTerm2 + earlyErrorTerm3);
+
+  // Output dei risultati
+  std::cout << "V Early I_200: " << Early_200 << " +/- " << EarlyError_200
+            << '\n';
+
+  // Calcolo della tensione di Early (V Early) per I_100
+  const double intercept_100 = fitLin_100->GetParameter(0);
+  const double slope_100 = fitLin_100->GetParameter(1);
+  const double interceptError_100 = fitLin_100->GetParError(0);
+  const double slopeError_100 = fitLin_100->GetParError(1);
+  const double Early_100 = std::abs(intercept_100 / slope_100);
+
+  // Calcolo dell'errore di Early_100
+  const double earlyErrorTerm1_100 = std::pow(interceptError_100 / slope_100,
+                                        2); // (Errore intercetta / pendenza)^2
+  const double earlyErrorTerm2_100 =
+      std::pow(intercept_100 * slopeError_100 / std::pow(slope_100, 2),
+               2); // (Errore pendenza * intercetta / pendenza^2)^2
+  const double earlyErrorTerm3_100 = -2 * intercept_100 * cov_10_100 /
+                               std::pow(slope_100, 3); // Termine di covarianza
+
+  const double EarlyError_100 = std::sqrt(earlyErrorTerm1_100 + earlyErrorTerm2_100 +
+                                    earlyErrorTerm3_100);
 
   std::cout << '\n';
   std::cout << "chi_v 100 " << fitLin_100->GetChisquare() / fitLin_100->GetNDF()
@@ -99,26 +127,32 @@ void sel_fit(const char *name_100, const char *name_200) {
   std::cout << "covarianze " << cov_10_100 << " " << cov_10_200 << '\n';
 
   std::cout << "V Early I_100: " << Early_100 << " +/- " << EarlyError_100
-            << '\n';
+            << " V " << '\n';
   std::cout << "V Early I_200: " << Early_200 << " +/- " << EarlyError_200
-            << '\n';
+            << " V " << '\n';
 
   // calcolo resistenza in uscita aka b
 
-  double RO_200 = std::abs(1 / fitLin_200->GetParameter(1));
-  double ROError_200 = std::sqrt(std::pow(
+  const double RO_200 = std::abs(1 / fitLin_200->GetParameter(1));
+  const double ROError_200 = std::sqrt(std::pow(
       fitLin_200->GetParError(1) / std::pow(fitLin_200->GetParameter(1), 2),
       2));
 
-  double RO_100 = std::abs(1 / fitLin_100->GetParameter(1));
-  double ROError_100 = std::sqrt(std::pow(
+  const double RO_100 = std::abs(1 / fitLin_100->GetParameter(1));
+  const double ROError_100 = std::sqrt(std::pow(
       fitLin_100->GetParError(1) / std::pow(fitLin_100->GetParameter(1), 2),
       2));
 
-  std::cout << "R Output I_100: " << RO_100 << " +/- " << ROError_100 << '\n';
-  std::cout << "R Output I_200: " << RO_200 << " +/- " << ROError_200 << '\n';
-  std::cout << "g I_100: " << 1 / RO_100 << " +/- " << ROError_100 / std::pow(RO_100,2) << '\n';
-  std::cout << "g I_200: " << 1 / RO_200 << " +/- " << ROError_200 / std::pow(RO_200,2) << '\n';
+  std::cout << "R Output I_100: " << RO_100 << " +/- " << ROError_100 << " kohm"
+            << '\n';
+  std::cout << "R Output I_200: " << RO_200 << " +/- " << ROError_200 << " kohm"
+            << '\n';
+
+  std::cout << "g I_100: " << 1 / RO_100 << " +/- "
+            << ROError_100 / std::pow(RO_100, 2) << " mS"
+            << '\n'; // milli Simens
+  std::cout << "g I_200: " << 1 / RO_200 << " +/- "
+            << ROError_200 / std::pow(RO_200, 2) << " mS" << '\n';
 
   // Disegna i grafici
   TCanvas *c1 = new TCanvas("I_200", "I_200", 200, 10, 600, 400);
