@@ -173,7 +173,9 @@ void sel_fit(const char *name_100, const char *name_200) {
   double betaError{0};
   double weightSum{0}; // Somma dei pesi
   double const dCurrent{0.1};
-  double const errdCurrent{std::sqrt(0.022*0.022+0.023*0.023)};
+  double const errdCurrent{(0.022+0.023)/std::sqrt(3)};
+  //ho considetato la differenza come errori massimi e poi ho scalato a quelli casuali
+  //così è più semplice l'espressione finale
 
   for (int i{0}; i < I_200->GetN() - 10; i++) {
     double y_200, y_100;
