@@ -184,10 +184,8 @@ void sel_fit(const char *name_100, const char *name_200) {
     y_100 = I_100->GetPointY(i);
 
     double beta_i = (y_200 - y_100)/dCurrent;
-    double beta_i_err2 = std::pow((err_200*err_200+err_100*err_100)/dCurrent,2)+ std::pow(beta_i* errdCurrent/(dCurrent*dCurrent),2); 
-    //è l'errore del singolo elemento
-    // ps è la formula delle derivate ma qui si semplifica l'espressione tirando
-    // fuori il beta
+    double beta_i_err2 = std::pow(err_200/dCurrent,2)+ std::pow(err_100/dCurrent,2)+ std::pow(beta_i* errdCurrent/dCurrent,2); 
+    //è l'errore del singolo elemento beta
     beta += beta_i / beta_i_err2;   // Somma pesata
     weightSum += 1.0 / beta_i_err2; // Somma dei pesi
   }
