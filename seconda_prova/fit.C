@@ -148,11 +148,11 @@ void sel_fit(const char *name_100, const char *name_200) {
   std::cout << "R Output I_200: " << RO_200 << " +/- " << ROError_200 << " kohm"
             << '\n';
 
-  std::cout << "g I_100: " << 1 / RO_100 << " +/- "
-            << ROError_100 / std::pow(RO_100, 2) << " mS"
+  std::cout << "g I_100: " << fitLin_100->GetParameter(1) << " +/- "
+            << fitLin_100->GetParError(1) << " mS"
             << '\n'; // milli Simens
-  std::cout << "g I_200: " << 1 / RO_200 << " +/- "
-            << ROError_200 / std::pow(RO_200, 2) << " mS" << '\n';
+  std::cout << "g I_200: " << fitLin_200->GetParameter(1) << " +/- "
+            << fitLin_200->GetParError(1) << " mS" << '\n';
 
   // Disegna i grafici
   TCanvas *c1 = new TCanvas("I_200", "I_200", 200, 10, 600, 400);
@@ -172,6 +172,8 @@ void sel_fit(const char *name_100, const char *name_200) {
   double beta{0};
   double betaError{0};
   double weightSum{0}; // Somma dei pesi
+  double const dCurrent{0.1};
+  double const errdCurrent{std::sqrt(0.022*0.022+0.023*0.023)};
 
   for (int i{0}; i < I_200->GetN() - 10; i++) {
     double y_200, y_100;
@@ -181,13 +183,13 @@ void sel_fit(const char *name_100, const char *name_200) {
     y_200 = I_200->GetPointY(i);
     y_100 = I_100->GetPointY(i);
 
-    double beta_i = y_200 / y_100;
-    double beta_i_err = beta_i * std::sqrt(std::pow(err_200 / y_200, 2) +
-                                           std::pow(err_100 / y_100, 2));
+    double beta_i = (y_200 - y_100)/dCurrent;
+    double beta_i_err2 = std::pow((err_200*err_200+err_100*err_100)/dCurrent,2)+ std::pow(beta_i* errdCurrent/(dCurrent*dCurrent),2); 
+    //è l'errore del singolo elemento
     // ps è la formula delle derivate ma qui si semplifica l'espressione tirando
     // fuori il beta
-    beta += beta_i / std::pow(beta_i_err, 2);   // Somma pesata
-    weightSum += 1.0 / std::pow(beta_i_err, 2); // Somma dei pesi
+    beta += beta_i / beta_i_err2;   // Somma pesata
+    weightSum += 1.0 / beta_i_err2; // Somma dei pesi
   }
 
   beta /= weightSum;                      // Media pesata

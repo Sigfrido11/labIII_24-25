@@ -1,14 +1,14 @@
 # Fdb version 4
-["biber relazione"] 0 "relazione.bcf" "relazione.bbl" "relazione" 1733078631.02518 0
+["biber relazione"] 0 "relazione.bcf" "relazione.bbl" "relazione" 1733123162.85013 0
   "citations.bib" 0 -1 0 ""
   "relazione.bcf" 0 -1 0 "pdflatex"
   (generated)
   "relazione.bbl"
   "relazione.blg"
   (rewritten before read)
-["pdflatex"] 1733078629.74876 "/home/giuseppe/Desktop/Giuseppe/università/terzo_anno/prove_laboratorio/seconda_prova/relazione.tex" "relazione.pdf" "relazione" 1733078631.02562 0
-  "/etc/texmf/web2c/texmf.cnf" 1726390593.49884 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/giuseppe/Desktop/Giuseppe/università/terzo_anno/prove_laboratorio/seconda_prova/relazione.tex" 1733078626.59145 21951 4515fb3b9787cfd206a782c8da3d1552 ""
+["pdflatex"] 1733123159.80467 "/home/giuseppe/Scrivania/giuseppe/uni/terzo_anno/prove_lab/seconda_prova/relazione.tex" "relazione.pdf" "relazione" 1733123162.85106 0
+  "/etc/texmf/web2c/texmf.cnf" 1726391678.49482 475 c0e671620eb5563b2130f56340a5fde8 ""
+  "/home/giuseppe/Scrivania/giuseppe/uni/terzo_anno/prove_lab/seconda_prova/relazione.tex" 1733123159.45387 21999 3f43e1c39258ec0c8ca3fe5e421b262c ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1728.tfm" 1136768653 1536 e079ec806f4d1916bef9ddc10128af55 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -186,18 +186,18 @@
   "/usr/share/texlive/texmf-dist/tex/latex/zref/zref-base.sty" 1694723124 20785 f7d1133a287929598a897c93f8f4c44b ""
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1636152094 2900 1537cc8184ad1792082cd229ecc269f4 ""
-  "/usr/share/texmf/fonts/type1/public/cm-super/sfrm1728.pfb" 1731250820.64748 131438 3aa300b3e40e5c8ba7b4e5c6cebc5dd6 ""
+  "/usr/share/texmf/fonts/type1/public/cm-super/sfrm1728.pfb" 1731323526.46794 131438 3aa300b3e40e5c8ba7b4e5c6cebc5dd6 ""
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
-  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1731250855.60173 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
-  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1731250931 8215260 80bc9ce068a03304d732323bc4f9cda1 ""
-  "pictures/apparato.png" 1733077280.26794 865658 a96726bf47b884e460d291e8a831fe75 ""
-  "pictures/circuito.png" 1733078544.55225 29067 9a1cf6c14fd2e504228c76e695999a7b ""
-  "pictures/g_tot_mean.png" 1733077160.53665 15461 66145199ad5209d8a33cc8967cff2fa9 ""
-  "pictures/pnp.png" 1733078548.02024 38902 4eeaaf011e9242e38578e901b15d15fb ""
-  "relazione.aux" 1733078630.83448 3174 afe63cc39d79a5e715bed252c07952d1 "pdflatex"
+  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1731323549.62859 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1731323634 8215718 b451714fbb0cc3d9fc093e47496bd79b ""
+  "pictures/apparato.png" 1733121921.82796 865658 a96726bf47b884e460d291e8a831fe75 ""
+  "pictures/circuito.png" 1733121921.82896 29067 9a1cf6c14fd2e504228c76e695999a7b ""
+  "pictures/g_tot_mean.png" 1733121921.82896 15461 66145199ad5209d8a33cc8967cff2fa9 ""
+  "pictures/pnp.png" 1733121921.82896 38902 4eeaaf011e9242e38578e901b15d15fb ""
+  "relazione.aux" 1733123162.39488 3174 afe63cc39d79a5e715bed252c07952d1 "pdflatex"
   "relazione.bbl" 0 -1 0 "biber relazione"
-  "relazione.run.xml" 1733078630.83848 2345 2d81b701017b44654c2b485549af2b7c "pdflatex"
-  "relazione.tex" 1733078626.59145 21951 4515fb3b9787cfd206a782c8da3d1552 ""
+  "relazione.run.xml" 1733123162.40288 2345 2d81b701017b44654c2b485549af2b7c "pdflatex"
+  "relazione.tex" 1733123159.45387 21999 3f43e1c39258ec0c8ca3fe5e421b262c ""
   (generated)
   "relazione.aux"
   "relazione.bcf"
