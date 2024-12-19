@@ -45,7 +45,7 @@ void sel_fit(const char *name_100, const char *name_200) {
   I_200->GetYaxis()->SetTitle("I (mA)");
 
   // Impostazione grafica per I_100
-  I_100->SetLineColor(2);
+  I_100->SetLineColor(1);
   I_100->SetMarkerStyle(21);
   I_100->SetMarkerSize(1.);
   I_100->SetTitle("I_100");
@@ -57,8 +57,8 @@ void sel_fit(const char *name_100, const char *name_200) {
   mg->Add(I_200);
   mg->Add(I_100);
   mg->SetTitle(" ");
-  mg->GetXaxis()->SetTitle("- V (bc) (V)");
-  mg->GetYaxis()->SetTitle("I (mA)");
+  mg->GetXaxis()->SetTitle("- V_{CE} (V)");
+  mg->GetYaxis()->SetTitle("- I (mA)");
   mg->GetYaxis()->SetTitleOffset(0.7);
   mg->GetXaxis()->SetTitleOffset(0.85);
   mg->GetXaxis()->SetTitleSize(0.06);
@@ -66,7 +66,7 @@ void sel_fit(const char *name_100, const char *name_200) {
   mg->GetXaxis()->SetLabelSize(0.06);
   mg->GetYaxis()->SetLabelSize(0.06);
 
-  const char *labels[2] = {"I=0.20 mA", "I=0.10 mA"};
+  const char *labels[2] = {"I=-0.20 mA", "I=-0.10 mA"};
   double x_100, y_100, x_200, y_200;
   I_100->GetPoint(2, x_100, y_100);
   I_200->GetPoint(2, x_200, y_200);
