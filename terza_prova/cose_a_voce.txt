@@ -1,0 +1,25 @@
+la differenza di potenziale è stata impostata a 5.000
+la differenza di potenziale della fissa è di 5.018 il fondoscala NON è quello del mV
+primo potenziometro quello che imposti tu -2.002, l'altro 2.001, il potenziometro da 50k aumenta in senso antiorario misura 40.00 kohm
+abbiamo fatto la misura sul periodo di 1ms (frequenza 1KHz) con il fondoscala 0.2ms 5 quadrati (1ms), con divisioni di 1 volt abbiamo misurato una semiampiezza di 6 volt. 
+
+la misura sui tempi del silicio con un fondo scala di 10 micros da 5 quadrati pieni + 2 suddivisione "5 pi§ 2/5 uno potrebbe dire" diodo al Germanio!. la semiampiezza viene 4 + 2.5 con fondoscala 0.5V 
+
+su i diodo al silicio con lo stesso fondoscala il tempo di salita è "5quadrati 5.5 quadratini"
+il tempo è un po' altino la semiampiezza viene 5 +0.5 con fondoscala da 0,5V 
+
+non viene esattamente simmetrico ma è questione di offset (del generatore di funzione?)
+
+1.992 V è la resistenza del potenziometro in dc che era collegato alla tensione che esce fissa 5G poi è stato impostato su 1.500V (l'altro potenziometro non si è spostato) infine l'abbiamo rimesso a 2.000V
+il valore accettato della resistenza critica non scende sotto i 20Kohm (tipicamente 25 -35 KOhm, di solito non sotto i 30KOhm) ma è dipendente dall'abilità dello sperimentale. 
+la prima misura della resistenza critica da 31.89 KOhm
+
+
+
+
+
+
+
+
+
+
