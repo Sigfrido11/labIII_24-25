@@ -1,0 +1,171 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{csquotes}
+\usepackage[margin = 1.4in]{geometry}
+\usepackage{amsmath}
+\usepackage{centernot}
+\usepackage{amsfonts}
+\usepackage{placeins}
+\usepackage{tcolorbox}
+\usepackage{float}
+\usepackage[font=scriptsize]{caption}
+\captionsetup{font={color={gray}}}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage[
+backend=biber,
+style=alphabetic,
+]{biblatex}
+\addbibresource{citations.bib}
+\newmdenv[innerlinewidth=0.5pt,roundcorner=4pt,linecolor=lightgray,innerleftmargin=6pt,
+innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{myblock}
+\begin{document}
+	\title{\textbf{Costruzione di un circuito 1-bit full adder e circuiti logici “OR” e “AND” in logica positiva}
+		
+		4° turno tavolo 5}
+	\author{Stefano Doria 0001093903 \and Giuseppe Luciano 0001077643}
+	
+	\date{Aprile 2025}
+	
+	\maketitle
+	
+	\section{Abstract}
+	
+	
+	\section{Introduzione}
+	In elettronica digitale una variabile elementare, chiamata variabile logica o variabile binaria, può assumere solamente due possibili valori e la tensione viene utilizzata come grandezza per definire gli stati logici alti e bassi. Nell'algebra di Boole vengono definite tre operazioni logiche elementari: AND, OR e NOT. Mentre il NOT inverte lo stato di una variabile logica, l'AND, ossia l'operatore prodotto indicato con $\cdot$ la cui tavola di verità è visibile in \ref{tab:and}, e l'OR, L'operatore somma indicato con + con tavola di verità mostrata in \ref{tab:or}, necessitano di due variabili in ingresso per restituire una condizione binaria in uscita.
+	
+	\begin{table}[h!]
+		\centering
+		\begin{minipage}{0.45 \textwidth}
+			\centering
+			\begin{tabular}{|c|c|c|}
+				\hline
+				\cellcolor{yellow} \text{A} & \cellcolor{yellow} \text{B} & \cellcolor{yellow} \text{A $\cdot$ B} \\
+				\hline
+				0 & 0 & 0 \\
+				0 & 1 & 0 \\
+				1 & 0 & 0 \\
+				1 & 1 & 1 \\
+				\hline
+			\end{tabular}
+			\caption{\textit{La tabella mostra la tavola di verità del AND}}
+			\label{tab:and}
+		\end{minipage}
+		\hspace{1cm} % Adds some space between the two tables
+		\begin{minipage}{0.45\textwidth}
+			\centering
+			\begin{tabular}{|c|c|c|}
+				\hline
+				\cellcolor{yellow} \text{A} & \cellcolor{yellow} \text{B} & \cellcolor{yellow} \text{A + B} \\
+				\hline
+				0 & 0 & 0 \\
+				0 & 1 & 1 \\
+				1 & 0 & 1 \\
+				1 & 1 & 1 \\
+				\hline
+			\end{tabular}
+			\caption{\textit{La tabella mostra la tavola di verità del OR}}
+			\label{tab:or}
+		\end{minipage}
+	\end{table}
+	
+	Per realizzare le due operazioni con un circuito si può usare una famiglia logica chiamata Diode Logic, che come suggerito dal nome, si basa sull'impiego di diodi. Come riferimento si assume che quando la differenza di potenziale applicata ai capi di tali dispositivi sia inferiore al valore di riferimento, assunto per convenzione V =0.7 V, prossimo al valore di soglia del diodo al silicio ($V_\gamma)$, allora   il dipolo si comporta come una resistenza dell'ordine del M$\Omega$, impedendo il passaggio di corrente nel ramo in cui è collocato. Nel caso contrario quando la d.d.p. ai capi del diodo è superiore al valore di riferimento allora quest'ultimo si comporta come una resistenza trascurabile, dell'ordine delle decine di $\Omega$, in serie ad un generatore di tensione pari alla $V_\gamma$. Questo è dovuto al potenziale di contatto fra le due giunzioni del semiconduttore con drogaggio differente che si attesta sui valori precedentemente presentati. Per una trattazione più completa del funzionamento delle giunzioni p-n si rimanda a \cite{6773080}. Per quanto appena osservato risulta allora chiaro che la Fig \ref{fig:and} e Fig \ref{fig:or} realizzano le tavole di verità rispettivamente del AND e del OR.
+	Per quanto concerne la tensione in uscita per la porta OR si può dimostrare che vale la seguente relazione.
+	\begin{equation}
+		V_{OUT} = (V_{GEN}- V_\gamma) \frac{R}{R_G-R}
+		\label{eq:v_out}
+	\end{equation}
+	Dove $V_{GEN}$ è la tensione del generatore, $R_G$ è la resistenza interna del generatore e $R$ la resistenza visibile in \ref{fig:or}. Si osserva quindi attenuazione del segnale in ingresso che può essere ridotta scegliendo una resistenza $R$ grande rendendo $\frac{R}{R_G-R} \simeq1$, dilatando però il tempo necessario affinché l'uscita cambi stato in seguito al cambiamento di stato di ingresso.
+	Si è realizzato e testato inoltre un circuito Full-Adder, ossia un dispositivo logico in grado di svolgere la somma binaria. A differenza degli Half-Adder, questi dispositivi, oltre a prendere in ingresso i due numeri da sommare, hanno anche la possibilità di considerare un eventuale riporto proveniente da un operazione precedente. Presentano quindi tre diversi terminali di ingresso, due per i numeri da sommare, denominati A e B, ed uno per il riporto ($Ci$ carry in), e due terminali di uscita, uno per la somma ($S$) e l'altro per il riporto ($Co$ carry out). La tavola di verità di questi dispositivi è visibile in Tab \ref{tab:ver_fadder}:
+	\begin{table}[h!]
+		\centering
+		\centering
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			\cellcolor{yellow} \text{A} & \cellcolor{yellow} \text{B} & \cellcolor{yellow} \text{$C_I$} & \cellcolor{yellow} \text{$S$} & \cellcolor{yellow} \text{$C_O$} \\
+			\hline
+			0 & 0 & 0 & 0 & 0 \\
+			0 & 0 & 1 & 1 & 0 \\
+			0 & 1 & 0 & 1 & 0 \\
+			0 & 1 & 1 & 0 & 1 \\
+			1 & 0 & 0 & 1 & 0 \\
+			1 & 0 & 1 & 0 & 1 \\
+			1 & 1 & 0 & 0 & 1 \\
+			1 & 1 & 1 & 1 & 1 \\
+			\hline
+		\end{tabular}
+		\caption{La tabella mostra la tavola di verità di un full adder. La prime tre colonne corrispondono ai agli stati logici delle variali logiche di ingresso (A), (B) e  carry in ($C_I$), mentre le ultime due i terminali di uscita della somma (S) e del carry out ($C_O$). }
+		\label{tab:full_adder}
+	\end{table}
+	
+	Si osserva che 
+	\begin{equation}
+		S= \bar{C_i}\bar{A}B +\bar{C_i}A\bar{B}+C_i\bar{A}\bar{B}+C_iAB 
+	\end{equation}
+	\begin{equation}
+		C_O= \bar{C_i}AB +C_iA\bar{B}+C_i\bar{A}B+C_iAB 
+	\end{equation}
+	È possibile poi semplificare queste espressioni, la dimostrazione è presente in Appendice \ref{app:a}, ottenendo:
+	\begin{equation}
+		S= C_i \oplus A \oplus B 
+	\end{equation}
+	\begin{equation}
+		C_O= AB +C_i(A+B) 
+	\end{equation}
+	Dove $\oplus$ è l'OR esclusivo (EXOR), operazione analoga al OR ma con la differenza che restituisce un valore nullo quando sia A che B valgono uno.
+	È possibile verificare la correttezza della relazione poiché $S$=1 quando, per A=0, B e $C_I$ sono diversi e quindi EXOR(B,$C_I$)=1 oppure A=1 e B e $C_I$ sono uguali, di conseguenza EXOR(B,$C_I$)=0. Invece $C_O$=1 quando $C_I$ =1 ed A e B sono diversi, riconducibile ad AND fra $C_i$ e EXOR tra A e B, oppure A e B sono uguali ad uno, corrispondente ad un AND fra A e B. Un possibile modo per realizzare quanto il relativo circuito è mostrato in Fig \ref{fig:circuito_fadder}. Nonostante la correttezza del risultato sul piano logico un circuito così realizzato nasconde delle problematiche nella non simultaneità di variazione dello stato dalle due uscite, per ovviare a tale ritardo si possono usare dei circuiti sommatori più complessi la cui trattazione esula dai nostri scopi, per maggiori informazioni si faccia riferimento a \cite{full_Adder}.
+	
+	Ci si è poi concentrati sulla creazione di circuiti logici OR e AND in logica positiva mediante l'impiego di diodi al silicio. Queste due operazioni sono, insieme al NOT, per convenzione, le tre operazioni logiche fondamentali dell'algebra di Boole 
+	
+	\section{Metodo sperimentale}
+	
+	
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.5\linewidth]{pictures/circuito1.png}
+		\caption{Schema del circuito tosatore a due livelli usato.}
+		\label{fig:circuito}
+	\end{figure}
+	
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.5\linewidth]{pictures/apparato1.png}
+		\caption{L'immagine mostra l'apparato sperimentale impiegato, con l'oscilloscopio, il multimetro, la breadboard e il generatore di tensione con anche il generatore di funzioni. }
+		\label{fig:apparato}
+	\end{figure}
+	
+	\FloatBarrier
+	\section{Risultati}
+	
+	
+	
+	\subsection{Dati}
+	Utilizzando il multimetro si è misurata la differenza di potenziale ai capi dei potenziometri nella configurazione impiegata per le valutazioni sulla semi-ampiezza ed i tempi di risalita; i valori impostati erano di (-2.0020 $\pm$ 0.0070) V e (2.0010 $\pm$ 0.0070) V. Invece, per la valutazione dell'onda asimmetrica, il valore della d.d.p in uno dei due rami con i diodi è stato fissato a (1.5000 $\pm$ 0.0060) V. Per tutte queste misure, l'incertezza è stata calcolata come da specifiche strumentali sommando 1 digit a 0.3\% sulla lettura, con un fondo-scala da 6 V e una risoluzione di 0.001 V. 
+	
+	Invece per quanto riguarda l'incertezza sui tempi misurati con l'oscilloscopio quest'ultima è stata calcolata come il 3\% della lettura più 1/5 del fondo-scala. Questo poiché vi era un errore in lettura di 1/10 del fondo-scala sia per il punto corrispondente al 10\% del picco dell'onda quadra sia per quello relativo al 90\% che sono stati dunque sommati a 1/5.  L'incertezza sulla tensione è anch'essa stata ottenuta come il 3\% della lettura più 1/5 del fondo-scala, avendo un errore di 1/10 sulla posizione sia sulla lettura sia dello zero che sono stati sommati.
+	
+	Con un fondo-scala di 1V la differenza di tensione per la semi-ampiezza non tosata ottenuta con l'oscilloscopio è stata di (6.00 $\pm$ 0.38) V. Invece il periodo dell'onda sinusoidale è stato determinato impiegando un fondo-scala da 0.2 ms, ottenendo $T = (1.000 \ \pm\ 0.070)$ ms.
+	
+	
+	
+	\section{Conclusioni}
+	
+	\section{Appendice} \ref{app:a}
+	Partendo da:
+	\begin{equation}
+		S= \bar{C_i}\bar{A}B +\bar{C_i}A\bar{B}+C_i\bar{A}\bar{B}+C_iAB = \bar{C_i}(\bar{A}B+A\bar{B})+ C_I(AB+ \bar{A}\bar{b})= \bar{C_i}(A \oplus B)+ C_I(A \oprod)
+	\end{equation}
+
+	
+	Invece per il carry out
+	\begin{equation}
+		C_O= \bar{C_i}AB +C_iA\bar{B}+C_i\bar{A}B+C_iAB = AB(\bar{C_I}+C_I)+C_I(\bar{A}B+A\bar{B})=AB+C_I(A \oplus B)
+	\end{equation}
+	
+	\medskip
+	
+	\printbibliography
+	
+\end{document}
