@@ -1,0 +1,65 @@
+exor ordine and livello
+or alto d 3.5 VOLT, tieni alla fine l'exor poichè serve il circuito di Pull up. l'uscita alta diventa garantita, quella bassa no, dipende dal valore della resistenza, devi metterti nel caso in cui ti aspetti una cosa bassa e regoli la resistenza in modo che la tensione sia inferiore a 400 mV. poi non lo devi toccare. poi fai la fìtavola di verità del full adder. 
+nel caso dell'and sotto è un livello alto, un più 5V.
+Del generatore la tensione è di 5.014 V. fondoscala 6V. 
+
+Lo stato basso sono 89.5 mV con scala 0.6 V. mentre lo stato logico alto 3.967 V, 
+
+Per OR (i tre cosi in alto?) due stati bassi f.s 600 mV la misura viene 109.8 mV. 
+HA messo il canale A nel collegamento in alto e B quella in basso. 
+Se B è il canale alto e A basso allora: uscita 4.039 V 
+Se B basso A alto uscita: 4.029V
+Nel caso di entrambi alti 4.026
+
+Siamo passati all'and (le prime tre porte 1 A,2 B,3)
+entambi bassi, 248.9 mV.
+Uno nello stato alto (B) e (A) basso 260.8 mV.
+Uno nello stato basso (B) e (A) alto 251.3 mV.
+Due alti 3.584 V.
+
+And delle porte in basso (10 A,9 B,8)
+entambi bassi, 240.0 mV.
+Uno nello stato alto (B) e (A) basso 239.4 mV.
+Uno nello stato basso (B) e (A) alto 235.2 mV.
+Due alti 3.589 V.
+
+Per EXOR numero 1 (le prime tre porte 1 A,2 B,3)
+entambi bassi 261.7 mV.
+Uno nello stato alto (B) e (A) basso 4.945 mV.
+Uno nello stato basso (B) e (A) alto 4.960 mV.
+Due alti 298.6 mV.
+
+EXOR delle porte in basso (10 A,9 B,8)
+entambi bassi 259.4 mV.
+Uno nello stato alto (B) e (A) basso 4.979 mV.
+Uno nello stato basso (B) e (A) alto 4.979 mV.
+Due alti 299.2 V.
+ 
+(giallo vicino alla rotellina) 
+La misura delle due resistenze per la configurazione (10,9,8) 0.798 K\Omega, per la configurazione (1, 2,3) 0.828 K\Omega. 
+
+quelli in alto di AND e Exor sono 123 in alto nel circuito e 10 9 8 per i simboli circuitali in basso.
+                              somma  mv   carry out mv
+A falso B falso Ci falso        263.0       86.8
+A falso B falso Ci vero         4.973       85.4 
+A falso B Vero Ci falso         4.979       85.4
+A falso B Vero Ci vero          296.9       4.069
+A vero B falso Ci falso         4.979       84.7
+A vero B falso Ci vero          297.0       4.072
+A vero B Vero Ci falso          263.3       4.069
+A vero B Vero Ci vero           4.977       4.072
+
+Stiamo facendo l'OR (coi diodi) il potenziometro 9.54 k\Omega con il range da 60 k\Omega
+Erambi alti 3.067
+A alto B basso 3.037
+A basso B alto 3.036
+entrambi bassi 0.4 mV
+
+Per l'and coi diodi
+Erambi alti 5.008
+A alto B basso 0.673
+A basso B alto  0.672
+entrambi bassi  0.640
+
+
+

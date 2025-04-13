@@ -144,25 +144,186 @@ innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{myblock}
 	\subsection{Dati}
 	Utilizzando il multimetro si è misurata la differenza di potenziale ai capi dei potenziometri nella configurazione impiegata per le valutazioni sulla semi-ampiezza ed i tempi di risalita; i valori impostati erano di (-2.0020 $\pm$ 0.0070) V e (2.0010 $\pm$ 0.0070) V. Invece, per la valutazione dell'onda asimmetrica, il valore della d.d.p in uno dei due rami con i diodi è stato fissato a (1.5000 $\pm$ 0.0060) V. Per tutte queste misure, l'incertezza è stata calcolata come da specifiche strumentali sommando 1 digit a 0.3\% sulla lettura, con un fondo-scala da 6 V e una risoluzione di 0.001 V. 
 	
-	Invece per quanto riguarda l'incertezza sui tempi misurati con l'oscilloscopio quest'ultima è stata calcolata come il 3\% della lettura più 1/5 del fondo-scala. Questo poiché vi era un errore in lettura di 1/10 del fondo-scala sia per il punto corrispondente al 10\% del picco dell'onda quadra sia per quello relativo al 90\% che sono stati dunque sommati a 1/5.  L'incertezza sulla tensione è anch'essa stata ottenuta come il 3\% della lettura più 1/5 del fondo-scala, avendo un errore di 1/10 sulla posizione sia sulla lettura sia dello zero che sono stati sommati.
-	
-	Con un fondo-scala di 1V la differenza di tensione per la semi-ampiezza non tosata ottenuta con l'oscilloscopio è stata di (6.00 $\pm$ 0.38) V. Invece il periodo dell'onda sinusoidale è stato determinato impiegando un fondo-scala da 0.2 ms, ottenendo $T = (1.000 \ \pm\ 0.070)$ ms.
 	
 	
+	Lo stato logico basso è di (89.50 $\pm$ 0.37) mV, mentre quello alto è stato di (3.967 $\pm$ 0.021)V
+	\begin{table}
+		
+	\begin{tabular}{|c|c|c|}
+		\hline
+		\cellcolor{yellow} \text{A} & \cellcolor{yellow} \text{B}  & \cellcolor{yellow} \text{A+B} \\
+		\hline
+		0 & 0 & 109.80 $\pm$ 0.43 mV \\
+		0 & 1 & 4.029 $\pm$ 0.021 V \\
+		1 & 0 & 4.039 $\pm$ 0.021 V \\	
+		1 & 1 & 4.026 $\pm$ 0.021 V \\
+		\hline
+			\end{tabular}
+		\caption{La tabella riassume le misure di tensioni ottenute per L'OR con circuito integrato.}
+		\label{tab:or_mis}
+	\end{table}
 	
+	
+	\begin{table}[h!]
+		\centering
+		\begin{minipage}{0.45 \textwidth}
+			\centering
+			\begin{tabular}{|c|c|c|}
+				\hline
+				\cellcolor{yellow} \text{A} & \cellcolor{yellow} \text{B}  & \cellcolor{yellow} \text{AB} \\
+				\hline
+				0 & 0 & 240.00 $\pm$ 0.82 mV \\
+				0 & 1 & 239.40 $\pm$ 0.82 mV \\
+				1 & 0 & 235.20 $\pm$ 0.81 mV \\	
+				1 & 1 & 3.589 $\pm$ 0.019 V\\
+				\hline
+			\end{tabular}
+			\caption{La tabella riassume le misure di tensioni ottenute per l'AND con circuito integrato nella prima porta considerata.}
+			\label{tab:and_mis1}
+		\end{minipage}
+		\hspace{1cm} % Adds some space between the two tables
+		\begin{minipage}{0.45\textwidth}
+			\centering
+			\begin{tabular}{|c|c|c|}
+				\hline
+				\cellcolor{yellow} \text{A} & \cellcolor{yellow} \text{B}  & \cellcolor{yellow} \text{AB} \\
+				\hline
+				0 & 0 & 248.90 $\pm$ 0.85 mV \\
+				0 & 1 & 260.80 $\pm$ 0.88 mV \\
+				1 & 0 & 251.30 $\pm$ 0.85 mV \\	
+				1 & 1 & 3.584 $\pm$ 0.019 V \\
+				\hline
+			\end{tabular}
+			\caption{La tabella riassume le misure di tensioni ottenute per l'AND con circuito integrato nella seconda porta considerata.}
+			\label{tab:and_mis2}
+		\end{minipage}
+	\end{table}
+	
+	
+	
+	\begin{table}[h!]
+		\centering
+		\begin{minipage}{0.45 \textwidth}
+			\centering
+			\begin{tabular}{|c|c|c|}
+				\hline
+				\cellcolor{yellow} \text{A} & \cellcolor{yellow} \text{B}  & \cellcolor{yellow} \text{A $\oplus$ B} \\
+				\hline
+				0 & 0 & 261.70 $\pm$ 0.89 mV \\
+				0 & 1 & 4.945 $\pm$ 0.026 V\\
+				1 & 0 & 4.960 $\pm$ 0.026 V\\	
+				1 & 1 & 298.6 $\pm$ 1.0 mV\\
+				\hline
+			\end{tabular}	
+			\caption{La tabella riassume le misure di tensioni ottenute per L'EXOR con circuito integrato nella prima porta considerata.}
+			\label{tab:exor_mis1}
+		\end{minipage}
+		\hspace{1cm} % Adds some space between the two tables
+		\begin{minipage}{0.45\textwidth}
+			\centering
+			\begin{tabular}{|c|c|c|}
+				\hline
+				\cellcolor{yellow} \text{A} & \cellcolor{yellow} \text{B}  & \cellcolor{yellow} \text{A $\oplus$ B} \\
+				\hline
+				0 & 0 & 259.40 $\pm$ 0.88 mV \\
+				0 & 1 & 4.979 $\pm$ 0.026 V \\
+				1 & 0 & 4.979 $\pm$ 0.026 V \\	
+				1 & 1 & 299.2 $\pm$ 1.0 mV \\
+				\hline
+			\end{tabular}
+			\caption{La tabella riassume le misure di tensioni ottenute per L'EXOR con circuito integrato nella seconda porta considerata.}
+			\label{tab:exor_mis2}	
+		\end{minipage}
+	\end{table}
+	
+	
+	
+	\begin{table}
+		\centering
+	\begin{tabular}{|c|c|c||c|c|}
+		
+		\hline
+		\cellcolor{yellow} \text{A} & \cellcolor{yellow} \text{B}  & \cellcolor{yellow} \text{$C_i$} & \cellcolor{yellow} \text{$S$} & \cellcolor{yellow} \text{$C_O$} \\
+		\hline
+		0 & 0 & 0 & 263.00 $\pm$ 0.89 mV & 86.80 $\pm$ 0.36 mV \\
+		0 & 0 & 1 & 4.973 $\pm$ 0.026 V & 85.40 $\pm$ 0.36 mV \\
+		0 & 1 & 0 & 4.979 $\pm$ 0.026 V & 85.40 $\pm$ 0.36 mV \\
+		0 & 1 & 1 & 296.90 $\pm$ 0.99 mV & 4.069 $\pm$ 0.021 V \\
+		1 & 0 & 0 & 4.979 $\pm$ 0.026 V & 84.70 $\pm$ 0.35 mV \\
+		1 & 0 & 1 & 297.00 $\pm$ 0.99 mV & 4.072 $\pm$ 0.021 V \\
+		1 & 1 & 0 & 263.30 $\pm$ 0.89 mV & 4.069 $\pm$ 0.021 V\\
+		1 & 1 & 1 & 4.977 $\pm$ 0.026 V & 4.072 $\pm$ 0.021 V \\
+		\hline
+	\end{tabular}
+	\caption{La tabella mostra le misure di tensione relative alla tavola di verità del full adder.}
+	\label{tab:fa_mis}	
+	\end{table}
+	
+	
+	
+	
+	
+	\begin{table}[h!]
+		\centering
+		\begin{minipage}{0.45 \textwidth}
+			\centering
+			\begin{tabular}{|c|c|c|}
+				\hline
+				\cellcolor{yellow} \text{A} & \cellcolor{yellow} \text{B}  & \cellcolor{yellow} \text{A + B} \\
+				\hline
+				0 & 0 & 400.0 $\pm$ 1.3 mV \\
+				0 & 1 & 3.037 $\pm$ 0.016 V\\
+				1 & 0 & 3.036 $\pm$ 0.016 V\\	
+				1 & 1 & 3.067 $\pm$ 0.016 V \\
+				\hline
+			\end{tabular}	
+			\caption{La tabella riassume le misure di tensioni ottenute per il circuito OR realizzato con i diodi.}
+			\label{tab:or_diode}
+		\end{minipage}
+		\hspace{1cm} % Adds some space between the two tables
+		\begin{minipage}{0.45\textwidth}
+			\centering
+			\begin{tabular}{|c|c|c|}
+				\hline
+				\cellcolor{yellow} \text{A} & \cellcolor{yellow} \text{B}  & \cellcolor{yellow} \text{A $\cdot$ B} \\
+				\hline
+				0 & 0 & 640.0 $\pm$ 2.0 mV \\
+				0 & 1 & 673.0 $\pm$ 2.1 mV \\
+				1 & 0 & 672.0 $\pm$ 2.1 mV \\	
+				1 & 1 & 5.008 $\pm$ 0.026 V \\
+				\hline
+			\end{tabular}
+			\caption{La tabella riassume le misure di tensioni ottenute per il circuito AND realizzato con i diodi.}
+			\label{tab:and_diode}	
+		\end{minipage}
+	\end{table}
+	
+	\FloatBarrier
 	\section{Conclusioni}
 	
 	\section{Appendice} \ref{app:a}
 	Partendo da:
-	\begin{equation}
-		S= \bar{C_i}\bar{A}B +\bar{C_i}A\bar{B}+C_i\bar{A}\bar{B}+C_iAB = \bar{C_i}(\bar{A}B+A\bar{B})+ C_I(AB+ \bar{A}\bar{b})= \bar{C_i}(A \oplus B)+ C_I(A \oprod)
-	\end{equation}
+\begin{equation}
+	\begin{aligned}
+		S &= \bar{C_i}\bar{A}B + \bar{C_i}A\bar{B} + C_i\bar{A}\bar{B} + C_iAB \\
+		&= \bar{C_i}(\bar{A}B + A\bar{B}) + C_i(AB + \bar{A}\bar{B}) \\
+		&= \bar{C_i}(A \oplus B) + C_i(A \odot B) \\
+		&= \bar{C_i}(A \oplus B) + C_i\overline{(A \oplus B)} \\
+		&= C_i \oplus A \oplus B
+	\end{aligned}
+\end{equation}
 
 	
 	Invece per il carry out
 	\begin{equation}
-		C_O= \bar{C_i}AB +C_iA\bar{B}+C_i\bar{A}B+C_iAB = AB(\bar{C_I}+C_I)+C_I(\bar{A}B+A\bar{B})=AB+C_I(A \oplus B)
+		\begin{aligned}
+			C_O &= \bar{C_i}AB + C_iA\bar{B} + C_i\bar{A}B + C_iAB \\
+			&= AB(\bar{C_i} + C_i) + C_i(\bar{A}B + A\bar{B}) \\
+			&= AB + C_i(A \oplus B)
+		\end{aligned}
 	\end{equation}
+	
+	
 	
 	\medskip
 	
