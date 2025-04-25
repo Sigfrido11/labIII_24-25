@@ -10,6 +10,7 @@
 \usepackage{tcolorbox}
 \usepackage{float}
 \usepackage[font=scriptsize]{caption}
+\captionsetup{font={color={gray}}}
 \usepackage[table,xcdraw]{xcolor}
 \usepackage[framemethod=tikz]{mdframed}
 \usepackage[
@@ -20,96 +21,162 @@ style=alphabetic,
 \newmdenv[innerlinewidth=0.5pt,roundcorner=4pt,linecolor=lightgray,innerleftmargin=6pt,
 innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{myblock}
 \begin{document}
-\title{\textbf{Circuito tosatore a due livelli}
-
-1° turno tavolo 5}
-\author{Stefano Doria 0001093903 \and Giuseppe Luciano 0001077643}
-
-\date{Marzo 2025}
-
-\maketitle
-
-\section{Abstract}
-
-L'esperimento aveva come fine quello di realizzare un circuito di doppio clipping, realizzato sia con diodi al silicio che con quelli al germanio,col fine di misurare le semiampiezze, i tempi di salita ed i valori di resistenza critica di un onda di potenziale sinusoidale tosata, I valori ottenuti sono stati di ... (così mentre parlavamo proprio abbozzatissimo)
-
-
-\section{Introduzione}
-
-
-\section{Metodo sperimentale}
-
-Durante l'esperimento sono stati usati un multimetro FLUKE 77 IV per alcune misure di potenziale e delle resistenze ed un oscilloscopio GOS-622B (modello 1) per le misure di tensione e dei tempi di risalita. È stato inoltre impiegato un generatore di tensione continua in cui è stato impostata un'erogazione di d.d.p. costante di 5 V, da due uscite differenti. Per la generazione dell'onda di potenziale sinusoidale è stato impiegato un ulteriore dispositivo che ci ha permesso di modulare la frequenza e l'ampiezza della d.d.p. immessa nel circuito. Sono inoltre stati impiegati due potenziometri da 1 k$\Omega$, posizionati sullo stesso ramo del diodo per selezionare le tenzioni di taglio, ed uno da 50k$\Omega$ per analizzare la resistenza critica. Il circuito, il cui schema è visibile in figura \ref{fig:circuito}, è poi stato realizzato concreatamente su una scheda millefori. Nella figura \ref{fig:apparato} si riporta un immagine dell'apparato sperimentale.
-
-Per l'esecuzione dell'esperimento si è prima verificato che entrambe le uscite del generatore che erogava una differenzea di potenziale costante fossero impostate correttamente a 5V.
-La misurazione è stata effettuata anche nell'uscita che non era direttamente regolabile per assicurarsi che non vi fossero differenze fra i due canali, aspetto che avrebbe generato delle asimetrie nei punti di taglio dell'onda sinusoidale. 
-%PARTE MESSA PER ECCESSO DI ZELO visto che alla fine quello che conta è la tensione misurata dopo aver impostato i due potenziometri
- Successivamente si è proceduto impostando i due potenziometri da 1 k$\Omega$ in modo che la differenza di potenziale sul ramo del diodo fosse di 2 V per entrambi i rami.  A questo punto è stato impostato il potenziomentro da 50k$\Omega$ in modo che la resistenza di carico nel circuito fosse di 40k$\Omega$, durante questa operazione si è inoltre prestata attenzione al verso di rotazione della vite di regolazione a cui corrisponde un aumento di resistenza di carico in modo da poter diminuire questo parametro con maggiore facilità durante la fase di misurazione della la resistenza critica. 
- Fatto questo si è passati alla regolazione dell'ampiezza, impostata a 12V, e della frequenza, settata ad 1kHz, dell'onda di potenziale erogata dal generatore capace di erogare d.d.p. in corrente alterata dopo aver selezionato la generazione di onde sunusoidali. Per effettuare delle misure più accurate si sono settati i parametri di fondoscala ed il grownd dell'oscilloscopio in modo opportuno sfruttando per quanto possibile l'interezza dello schermo dopo essersi accertati che il segnale fosse sempre pulito e correttamente stabilizzato dal trigger.
- 
-A questo punto si è completata la realizzazione del circuito mediante l'inserimento dei diodi al silicio, quindi, dopo aver controllato che il taglio dell'onda fosse simmetrico, si è passati alla fase di misurazione della semiampiezza e del tempo di salita del segnale. Nuovamente è stato impostato lo zero dell'oscilloscopio in modo opportuno e si sono scelti i fondoscala che garantissero la migliore accuratezza nella misura cercando di spostare il segnale sul display in modo che la lettura dello stesso fosse semplificata. La medesima operazione è stata poi ripetuta anche dopo la sosstituzione dei diodi al silicio con quelli al germanio. 
-
-Infine si è cercato di misurare la resistenza critica in un circuito con i diodi al silicio cercando variando la resistenza di carica sul circuito analizzando sul display quale fosse il valore minimo di resistenza al quale si osservava una variazione nella forma della curva.
-
-
-\begin{figure}
-    \centering
-%    \includegraphics[width=0.5\linewidth]{pictures/circuito.png}
-    \caption{Caption}
-    \label{fig:circuito}
-\end{figure}
-
-\begin{figure}
-    \centering
- %   \includegraphics[width=0.5\linewidth]{pictures/apparato.png}
-    \caption{Caption1}
-    \label{fig:apparato}
-\end{figure}
-
-
-\section{Risultati}
-
-
-
-\subsection{Dati}
-
-
-\begin{table}[h!]
-\centering
-\begin{tabular}{|c|c|c|}
-\hline
-\textbf{par 1} & \textbf{par 2} & \textbf{par 3} \\
-\hline
-a & b & c \\
-\hline
-d & e & f \\
-\hline
-g & h & i \\
-\hline
-\end{tabular}
-\caption{Ho imparato l'alfabeto ma nemmeno tutto}
-\label{}
-\end{table}
-
-
-\subsection{Analisi Dati} 
-Nella figura si mostra il risultato dell'onda di potenziale tosata nel caso di confurazione con diodi al silicio
-
-\begin{figure}
-	\centering
-	%   \includegraphics[width=0.5\linewidth]{pictures/onda_tosata.png}
-	\caption{Caption1}
-	\label{fig:apparato}
-\end{figure}
-
-
-
-\section{Conclusioni}
-
-
-
-\medskip
-
-\printbibliography
-
+	\title{\textbf{Circuito tosatore a due livelli}
+		
+		1° turno tavolo 5}
+	\author{Stefano Doria 0001093903 \and Giuseppe Luciano 0001077643}
+	
+	\date{Marzo 2025}
+	
+	\maketitle
+	
+	\section{Abstract}
+	
+	L'esperimento aveva come fine quello di realizzare ed analizzare un circuito tosatore a due livelli, costruito sia con diodi al silicio che con quelli al germanio, capace quindi di prendere in input una tensione sinusoidale e restituire in output un'onda quadra analogica. Si sono misurati i tempi di salita e le semi-ampiezze delle tensioni in output di entrambe le configurazioni, risultati essere rispettivamente (59.0 $\pm$ 3.8) $\mu$s e (2.55 $\pm$ 0.18) V per il silicio e (54.0 $\pm$ 3.6) $\mu$s e (2.20 $\pm$ 0.17) V per il germanio. Si è inoltre misurato il valore di resistenza critica per il circuito tosatore realizzato con diodi al silicio, risultata essere di $R_{C}$ = (31.89 $\pm$ 0.17) k$\Omega$.
+	
+	
+	\section{Introduzione}
+	
+	Durante l'esperimento si è osservato il funzionamento di un circuito tosatore a due livelli e si sono confrontati i risultati ottenuti dall'impiego di diodi al germanio rispetto a quelli al silicio. Questo circuito produce in output un'approssimazione di onda quadra analogica, e quindi simmetrica rispetto alla tensione del ground, a partire da un'onda sinusoidale di tensione in input che viene "tosata" grazie alla presenza dei rami con i diodi. 
+	
+	Per realizzare questo tipo di circuito si sfruttano le proprietà di un diodo, un dispositivo che consiste in una giunzione p-n di semiconduttore. Quando ad esso si applica tra anodo (corrispondente alla regione drogata p della giunzione) e catodo (corrispondente al segmento drogato n) una tensione minore della tensione di soglia $V_\gamma$, che da modello si assume essere $\simeq$ 0.6 V per i diodi al silicio e $\simeq$ 0.2 V per quelli al germanio, si comporta come una resistenza dell'ordine del M$\Omega$, bloccando di fatto il passaggio di corrente nel ramo in cui è collocato. Quando invece la tensione applicatavi supera quella di soglia del diodo quest'ultimo si comporta come una resistenza trascurabile, dell'ordine delle decine di $\Omega$, in serie ad un generatore di tensione pari alla $V_\gamma$ del diodo impiegato facendo dunque sì che tra anodo e catodo ci sia una differenza di potenziale pari a $V_\gamma$. Questo è dovuto al potenziale di contatto fra le due giunzioni del semiconduttore con drogaggio differente che si attesta sui valori precedentemente presentati. Per una trattazione più completa del funzionamento delle giunzioni p-n si rimanda a \cite{6773080}.
+	
+	L'operazione di "tosare" la parte superiore di una differenza di tensione in ingresso consiste nel processo di limitare la tensione in uscita in modo che, una volta che l'input superi un determinato livello, la tensione di uscita rimanga costante a tale valore, impedendo ulteriori incrementi. Per ottenere il risultato desiderato si può realizzare lo schema mostrato in Fig \ref{fig:clipHIGH}. Si riscontra come nel ramo con diodo e generatore la corrente non scorra finché la differenza di potenziale in entrata risulta inferiore alla somma della tensione $V_R$ del generatore e della $V_\gamma$ del diodo,  e dunque la tensione in entrata $v_i$ e la tensione in uscita $v_o$ risultano uguali. Invece quando la $v_i$ supera $V_R + V_\gamma$ il diodo conduce e la $v_o$ è data da
+	\begin{equation}
+		\centering
+		v_o = v_i [R_f/(R+R_f)] + (V_R + V_\gamma) [1-R_f/(R+R_f)] 
+		\label{eq:v_out1}
+	\end{equation}
+	dove $R_f$ è la resistenza del diodo in polarizzazione diretta. Poiché $R_f \sim 10 \ \Omega$ è molto piccola rispetto $R \sim 10$k$\Omega$, si può assumere che il rapporto resistivo $R_f/(R+R_f)$ sia approssimativamente nullo, e dunque risulta che $$ v_o \simeq V_R + V_\gamma $$
+	
+	Per poi porre anche un limite inferiore alla tensione, è necessario aggiungere un ulteriore ramo come mostrato in Fig \ref{fig:clipLOW}, dove il diodo risulta invertito rispetto al caso precedente. Così facendo, la $v_o$ è uguale alla $v_i$ per tensioni superiori a $V_R - V_\gamma$, mentre per tensioni inferiori il ramo con diodo e generatore conduce e la $v_o$ risulta essere
+	\begin{equation}
+		\centering 
+		v_o = v_i [R_f/(R+R_f)] + (V_R - V_\gamma) [1-R_f/(R+R_f)]
+		\label{eq:v_out2}
+	\end{equation}
+	E come prima, essendo che $R_f/(R+R_f) \simeq 0$, si ha che $$ v_o \simeq V_R - V_\gamma $$   
+	
+	\begin{figure}
+		\centering
+		\begin{minipage}{0.45\textwidth}
+			\centering
+			\includegraphics[width=0.8 \linewidth]{pictures/clipHIGH.png}
+			\caption{Modello di un circuito di clipping per la parte superiore di un segnale. Si fa notare che la base del triangolo nel simbolo del diodo corrisponde all'anodo.}
+			\label{fig:clipHIGH}
+		\end{minipage}
+		\hfill
+		\begin{minipage}{0.445\textwidth}
+			\centering
+			\includegraphics[width=0.8 \linewidth]{pictures/clipLOW.png}
+			\caption{Modello di un circuito di clipping per la parte inferiore di un segnale. Si fa notare che la base del triangolo nel simbolo del diodo corrisponde all'anodo.}
+			\label{fig:clipLOW}
+		\end{minipage}%
+	\end{figure}
+	
+	Si nota che le Eq. \ref{eq:v_out1} e \ref{eq:v_out2} si applicano anche nel caso in cui il diodo non risulti polarizzato direttamente, il che comporta che al posto di $R_f$ si abbia una $R_r > 1$M$\Omega$ molto grande rispetto a $R$, per cui $R_f/(R+R_f) \simeq 1$ e, come già si era concluso mediante ragionamenti di natura qualitativa.$$ v_o \simeq v_i$$ 
+	
+	Combinando le due configurazioni trattate come in Fig \ref{fig:clipTOT} si può ottenere da una tensione sinusoidale in input un'approssimazione di onda quadra analogica in output \cite{clipper}, come mostrato nel caso ideale dalla Fig \ref{fig:graph_clip}. Un parametro importante per la tensione ottenuta in uscita risulta essere il tempo si salita del segnale, definito come l'intervallo di tempo necessario per passare in output da un valore del 10\% del picco del segnale in uscita al 90\%. Si nota infine che per $R$ inferiori ad un valore $R_C \simeq 25-35$ k$\Omega$ di resistenza critica si prevede che il taglio all'onda sinusoidale non risulti più accuratamente descritto da questa trattazione. 
+	
+	
+	
+	\begin{figure}
+		\centering
+		\begin{minipage}{0.45\textwidth}
+			\centering
+			\includegraphics[width=0.8 \linewidth]{pictures/clipTOT.png}
+			\caption{Modello di un circuito di clipping per produrre un'approssimazione di onda quadra limitando superiormente e inferiormente un input sinusoidale.}
+			\label{fig:clipTOT}
+		\end{minipage}
+		\hfill
+		\begin{minipage}{0.45\textwidth}
+			\centering
+			\includegraphics[width=0.8 \linewidth]{pictures/graph_clip.png}
+			\caption{Ideale effetto di limitazione di un circuito di clipping su un input sinusoidale.}
+			\label{fig:graph_clip}
+		\end{minipage}%
+	\end{figure}
+	
+	
+	\section{Metodo sperimentale}
+	
+	Durante l'esperimento sono stati usati un multimetro FLUKE 77 IV per alcune misure di potenziale e di resistenza ed un oscilloscopio GOS-622B (modello 1) per le misure di tensione e dei tempi di risalita. È stato inoltre impiegato un generatore di tensione continua in cui è stato impostata un'erogazione di d.d.p. costante di 5 V e -5 V, da due uscite differenti. Per la generazione dell'onda di potenziale sinusoidale è stato impiegato un generatone di funzioni che ci ha permesso di modulare la frequenza e l'ampiezza della d.d.p. immessa nel circuito. Sono inoltre stati utilizzati due potenziometri da 1 k$\Omega$, ciascuno posizionato sullo stesso ramo di un diodo per selezionare le tensioni di taglio $V_R + V_\gamma$, ed uno da 50k$\Omega$ per selezionare il valore di $R$ ed analizzare la resistenza critica $R_C$. Il circuito, il cui schema è visibile in Fig. \ref{fig:circuito}, è poi stato realizzato concreatamene su una scheda millefori, mentre nella Fig. \ref{fig:apparato} si riporta un immagine dell'apparato sperimentale.
+	
+	Per l'esecuzione dell'esperimento si è prima verificato che entrambe le uscite del generatore di tensione fossero impostate correttamente a 5V. 
+	Successivamente si è proceduto regolando i due potenziometri da 1 k$\Omega$ in modo che la $V_R$ sul ramo del diodo fosse di 2 V in modulo per entrambi i rami. A questo punto è stato settato il potenziometro da 50 k$\Omega$ in modo che la resistenza $R$ nel circuito risultasse essere pari a 40 k$\Omega$; durante questa operazione si è inoltre prestata attenzione al verso di rotazione della vite di regolazione corrispondente ad un aumento di $R$ in modo da poter diminuire la resistenza nel circuito con maggiore facilità durante la fase di misurazione della la resistenza critica. 
+	Fatto questo si è poi passati alla regolazione dell'ampiezza, impostata a 12V, e della frequenza, settata ad 1 kHz, dell'onda sinusoidale prodotta dal generatore di funzione. Per effettuare delle misure più accurate si sono settati i parametri di fondo scala e lo zero dell'oscilloscopio in modo opportuno sfruttando, per quanto possibile, l'interezza dello schermo dopo essersi accertati che il segnale fosse sempre pulito e correttamente stabilizzato dal trigger.
+	
+	A questo punto si è completata la realizzazione del circuito mediante l'inserimento dei diodi al silicio. Quindi, dopo aver controllato che il taglio dell'onda fosse simmetrico, si è passati alla fase di misurazione della semi-ampiezza dell'onda quadra in output e del tempo di salita del segnale mediante l'oscilloscopio. Per valutare i tempi di salita sì è impostato il valore del ground dell'oscilloscopio in corrispondenza del valore di 0\% segnato sul display e si è scalibrata la scala delle ampiezze in modo che il "ginocchio" della curva fosse in corrispondenza della linea del 100\%. A questo punto, dopo aver spostato i riferimenti sull'asse dei tempi in modo da avere una lettura facilitata, si è misurato l'intervallo temporale necessario al segnale per passare dal 10\% al 90\%, livelli che risultavano essere appositamente segnati sullo schermo dello strumento. Le medesime operazioni sono state poi ripetute anche dopo la sostituzione dei diodi al silicio con quelli al germanio. Si specifica inoltre come per la misura dello zero dell'oscilloscopio non si sia usato il fondo-scala minimo possibile ma lo stesso della lettura.
+	
+	In un secondo momento si è modificata la differenza di potenziale sul ramo di uno dei due diodi, riducendola a 1.5V, in modo da verificare che il il taglio sull'onda sinusoidale diventasse così asimmetrico.
+	
+	Infine si è misurata la resistenza critica $R_C$ nel circuito realizzato con i diodi al silicio variando la resistenza $R$. Per ottenere tale misura si è guardato sul display dell'oscilloscopio quale fosse il valore massimo di resistenza al quale si osservava un aumento del picco dell'onda quadra in output.
+	
+	
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.5\linewidth]{pictures/circuito1.png}
+		\caption{Schema del circuito tosatore a due livelli usato.}
+		\label{fig:circuito}
+	\end{figure}
+	
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.5\linewidth]{pictures/apparato1.png}
+		\caption{L'immagine mostra l'apparato sperimentale impiegato, con l'oscilloscopio, il multimetro, la breadboard e il generatore di tensione con anche il generatore di funzioni. }
+		\label{fig:apparato}
+	\end{figure}
+	
+	\FloatBarrier
+	\section{Risultati}
+	
+	
+	
+	\subsection{Dati}
+	Utilizzando il multimetro si è misurata la differenza di potenziale ai capi dei potenziometri nella configurazione impiegata per le valutazioni sulla semi-ampiezza ed i tempi di risalita; i valori impostati erano di (-2.0020 $\pm$ 0.0070) V e (2.0010 $\pm$ 0.0070) V. Invece, per la valutazione dell'onda asimmetrica, il valore in modulo della d.d.p $V_R$ in uno dei due rami con i diodi è stato fissato a (1.5000 $\pm$ 0.0060) V. Per tutte queste misure, l'incertezza è stata calcolata come da specifiche strumentali sommando 1 digit a 0.3\% sulla lettura, con un fondo-scala da 6 V e una risoluzione di 0.001 V. 
+	
+	Invece per quanto riguarda l'incertezza sui tempi misurati con l'oscilloscopio quest'ultima è stata calcolata come il 3\% della lettura più 1/5 del fondo-scala. Questo poiché vi era un errore in lettura di 1/10 del fondo-scala sia per il punto corrispondente al 10\% del picco dell'onda quadra sia per quello relativo al 90\% che sono stati dunque sommati a 1/5.  L'incertezza sulla tensione è anch'essa stata ottenuta come il 3\% della lettura più 1/5 del fondo-scala, avendo un errore di 1/10 sulla posizione sia sulla lettura sia dello zero che sono stati sommati.
+	
+	Con un fondo-scala di 1 V la differenza di tensione per la semi-ampiezza non tosata ottenuta con l'oscilloscopio è stata di (6.00 $\pm$ 0.38) V. Invece il periodo dell'onda sinusoidale è stato determinato impiegando un fondo-scala da 0.2 ms, ottenendo $T = (1.000 \ \pm\ 0.070)$ ms.
+	
+	\begin{table}[h!]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			\cellcolor{yellow} \text{Tipologia diodo} & \cellcolor{yellow} \text{Tempi risalita ($\mu$s)} & \cellcolor{yellow} \text{f.s. ($\mu$s)} & \cellcolor{yellow} \text{Semiampiezza (V)} & \cellcolor{yellow} \text{f.s. (V)} \\
+			\hline
+			Silicio & 59.0 $\pm$ 3.8 & 10 & 2.55 $\pm$ 0.18 & 0.5 \\
+			\hline
+			Germanio & 54.0 $\pm$ 3.6 & 10 & 2.20 $\pm$ 0.17 & 0.5 \\
+			\hline
+		\end{tabular}
+		\caption{La tabella riassume i valori dei tempi di risalita e delle semi-ampiezze nel caso dei diodi al silicio ed al germanio, riportando i fondo-scala utilizzati per l'oscilloscopio.}
+		\label{tab:risulati}
+	\end{table}
+	Per le misure con il multimetro sulle resistenze vi è una risoluzione di 0.01 $\mathrm{k\Omega}$ su fondo scala di 60.00 $\mathrm{k \Omega}$, utilizzato per tutte le misure, ed accuratezza del 0.5\% sulla lettura più un digit. Per la misura sulla resistenza $R$ si è ottenuto (40.00 $\pm$ 0.21) k$\Omega$. La resistenza critica è invece risultata essere nel caso del silicio $R_{C} = (31.89 \pm 0.17) $ k$\Omega$.
+	
+	Nella Fig. \ref{fig:onda_tosata} si mostra il risultato dell'onda di potenziale tosata nel caso di configurazione con diodi al silicio e valori delle due $V_R$ di modulo $\simeq$ 1.5 V e 2 V. Si nota inoltre come il taglio sull'onda non risulta essere perfettamente netto visto che un minimo rialzamento è presente. Ciò è un effetto legato alla non idealità del circuito visto che, per quanto piccolo, il rapporto $R_f/(R+R_f)$ non può annullarsi completamente creando delle deviazioni rispetto al caso mostrato in Fig \ref{fig:graph_clip}.
+	
+	\begin{figure}
+		\centering  
+		\includegraphics[width=0.5\linewidth]{pictures/onda_tosata.jpeg}
+		\caption{Lo foto mostra l'effetto di tosatura di un circuito con un diodi al silicio e le due $|V_R|$ $\simeq$ 1.5 V e 2 V. Si nota una leggera asimmetria nel taglio dell'onda sinusoidale.}
+		\label{fig:onda_tosata}
+	\end{figure}
+	
+	
+	
+	\section{Conclusioni}
+	
+	I valori ottenuti dei tempi di risalita e della semi-ampiezza sono stati rispettivamente di (59.0 $\pm$ 3.8) $\mu$s e (2.55 $\pm$ 0.18) V per il silicio e (54.0 $\pm$ 3.6) $\mu$s e (2.20 $\pm$ 0.17) V per il germanio. Si riscontra inoltre come il taglio sull'onda di potenziale tosata non risulta essere netto. Questo è legato ad effetti di non idealità del circuito che risultano essere correttamente previsti dalla modellazione teorica adottata per la descrizione dell'esperimento. Invece il valore di resistenza critica nel caso del diodo al silicio è stato di $R_{C}$ = (31.89 $\pm$ 0.17) k$\Omega$. 
+	
+	I valori dei tempi di risalita sono compatibili con quelli attesi nonostante il valore misurato nel caso del diodo al germanio risulti essere leggermente superiore a quanto previsto da modello.
+	Le semi-ampiezze ottenute risultano entro il range di valori che ci si attendeva, considerando una $V_\gamma$ $\simeq$ 0.6 V per il silicio e $\simeq$ 0.2V per germanio. Lo stesso vale per la resistenza critica $R_C$, il cui valore atteso era compreso fra 25-35 k$\Omega$.
+	
+	Si nota infine che, utilizzando valori di tensione $V_R$ diversi sui due rami con i diodi, il taglio dell'input sinusoidale risulti essere asimmetrico, come atteso.
+	
+	\medskip
+	
+	\printbibliography
+	
 \end{document}

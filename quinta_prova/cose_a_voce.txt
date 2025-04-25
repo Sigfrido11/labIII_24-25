@@ -1,0 +1,18 @@
+3.976 V stato alto
+78.9 mV stato basso
+
+Vcc 4.882 V
+
+arancione e verde (india) sono s1
+
+zeri oscilloscopio f.s. 5 mV
+
+onda quadra digitale (T circa 10ms) input I1. verificato che la si vede in uscita solo per S0 e S1 che fanno passare I1
+
+Entrata
+Basso 4 div + 1 sottodiv f.s 10 mV (non pulito)
+Alto 4 div f.s. 1V
+
+Uscita
+Basso 1 div f.s 100 mV (non pulito)
+Alto 3 div + 4 sottodiv f.s. 1V

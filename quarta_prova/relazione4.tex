@@ -31,10 +31,10 @@ innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{myblock}
 	\maketitle
 	
 	\section{Abstract}
-	
+	In questo esperimento si è ricostruita la tavola di verità di un circuito Full-Adder realizzato con circuiti integrati basati sula famiglia TTL. Inoltre è stato testato il comportamento di delle porte OR e AND realizzate con la DL.
 	
 	\section{Introduzione}
-	In elettronica digitale una variabile elementare, chiamata variabile logica o variabile binaria, può assumere solamente due possibili valori e la tensione viene utilizzata come grandezza per definire gli stati logici alti e bassi. Nell'algebra di Boole vengono definite tre operazioni logiche elementari: AND, OR e NOT. Mentre il NOT inverte lo stato di una variabile logica, l'AND, ossia l'operatore prodotto indicato con $\cdot$ la cui tavola di verità è visibile in \ref{tab:and}, e l'OR, L'operatore somma indicato con + con tavola di verità mostrata in \ref{tab:or}, necessitano di due variabili in ingresso per restituire una condizione binaria in uscita.
+	In elettronica digitale una variabile elementare, chiamata variabile logica o variabile binaria, può assumere solamente due possibili valori utilizzando la tensione come grandezza per definire gli stati logici alti e bassi. Nell'algebra di Boole vengono definite tre operazioni logiche elementari: AND, OR e NOT. Mentre il NOT inverte lo stato di una variabile logica, l'AND, ossia l'operatore prodotto indicato con $\cdot$ la cui tavola di verità è visibile in \ref{tab:and}, e l'OR, L'operatore somma indicato con + con tavola di verità mostrata in \ref{tab:or}, necessitano di due variabili in ingresso per restituire una condizione binaria in uscita.
 	
 	\begin{table}[h!]
 		\centering
@@ -71,20 +71,20 @@ innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{myblock}
 		\end{minipage}
 	\end{table}
 	
-	Per realizzare le due operazioni con un circuito si può usare una famiglia logica chiamata Diode Logic, che come suggerito dal nome, si basa sull'impiego di diodi. Come riferimento si assume che quando la differenza di potenziale applicata ai capi di tali dispositivi sia inferiore al valore di riferimento, assunto per convenzione V =0.7 V, prossimo al valore di soglia del diodo al silicio ($V_\gamma)$, allora   il dipolo si comporta come una resistenza dell'ordine del M$\Omega$, impedendo il passaggio di corrente nel ramo in cui è collocato. Nel caso contrario quando la d.d.p. ai capi del diodo è superiore al valore di riferimento allora quest'ultimo si comporta come una resistenza trascurabile, dell'ordine delle decine di $\Omega$, in serie ad un generatore di tensione pari alla $V_\gamma$. Questo è dovuto al potenziale di contatto fra le due giunzioni del semiconduttore con drogaggio differente che si attesta sui valori precedentemente presentati. Per una trattazione più completa del funzionamento delle giunzioni p-n si rimanda a \cite{6773080}. Per quanto appena osservato risulta allora chiaro che la Fig \ref{fig:and} e Fig \ref{fig:or} realizzano le tavole di verità rispettivamente del AND e del OR.
+	Per realizzare le due operazioni con un circuito si è utilizzata la famiglia logica chiamata Diode Logic (DL) in logica positva, che come suggerito dal nome, si basa sull'impiego di diodi. Come riferimento si assume che quando la differenza di potenziale applicata ai capi di tali dispositivi sia inferiore al valore di riferimento, assunto per convenzione V =0.7 V, prossimo al valore di soglia del diodo al silicio ($V_\gamma)$, allora   il dipolo si comporta come una resistenza dell'ordine del M$\Omega$, impedendo il passaggio di corrente nel ramo in cui è collocato. Nel caso contrario quando la d.d.p. ai capi del diodo è superiore al valore di riferimento allora quest'ultimo si comporta come una resistenza trascurabile, dell'ordine delle decine di $\Omega$, in serie ad un generatore di tensione pari alla $V_\gamma$. Questo è dovuto al potenziale di contatto fra le due giunzioni del semiconduttore con drogaggio differente che si attesta sui valori precedentemente presentati. Per una trattazione più completa del funzionamento delle giunzioni p-n si rimanda a \cite{6773080}. Per quanto appena osservato risulta allora chiaro che la Fig \ref{fig:and} e Fig \ref{fig:or} realizzano le tavole di verità rispettivamente del AND e del OR.
 	Per quanto concerne la tensione in uscita per la porta OR si può dimostrare che vale la seguente relazione.
 	\begin{equation}
 		V_{OUT} = (V_{GEN}- V_\gamma) \frac{R}{R_G-R}
 		\label{eq:v_out}
 	\end{equation}
 	Dove $V_{GEN}$ è la tensione del generatore, $R_G$ è la resistenza interna del generatore e $R$ la resistenza visibile in \ref{fig:or}. Si osserva quindi attenuazione del segnale in ingresso che può essere ridotta scegliendo una resistenza $R$ grande rendendo $\frac{R}{R_G-R} \simeq1$, dilatando però il tempo necessario affinché l'uscita cambi stato in seguito al cambiamento di stato di ingresso.
-	Si è realizzato e testato inoltre un circuito Full-Adder, ossia un dispositivo logico in grado di svolgere la somma binaria. A differenza degli Half-Adder, questi dispositivi, oltre a prendere in ingresso i due numeri da sommare, hanno anche la possibilità di considerare un eventuale riporto proveniente da un operazione precedente. Presentano quindi tre diversi terminali di ingresso, due per i numeri da sommare, denominati A e B, ed uno per il riporto ($Ci$ carry in), e due terminali di uscita, uno per la somma ($S$) e l'altro per il riporto ($Co$ carry out). La tavola di verità di questi dispositivi è visibile in Tab \ref{tab:ver_fadder}:
+	Si è realizzato e testato inoltre un circuito Full-Adder, ossia un dispositivo logico in grado di svolgere la somma binaria. A differenza degli Half-Adder, questi dispositivi, oltre a prendere in ingresso i due numeri da sommare, hanno anche la possibilità di considerare un eventuale riporto proveniente da un operazione precedente. Presentano quindi tre diversi terminali di ingresso, due per i numeri da sommare, denominati A e B, ed uno per il riporto ($C_i$ carry in), e due terminali di uscita, uno per la somma ($S$) e l'altro per il riporto ($C_o$ carry out). La tavola di verità di questi dispositivi è visibile in Tab \ref{tab:ver_fadder}:
 	\begin{table}[h!]
 		\centering
 		\centering
 		\begin{tabular}{|c|c|c|c|c|}
 			\hline
-			\cellcolor{yellow} \text{A} & \cellcolor{yellow} \text{B} & \cellcolor{yellow} \text{$C_I$} & \cellcolor{yellow} \text{$S$} & \cellcolor{yellow} \text{$C_O$} \\
+			\cellcolor{yellow} \text{A} & \cellcolor{yellow} \text{B} & \cellcolor{yellow} \text{$C_I$} & \cellcolor{yellow} \text{$S$} & \cellcolor{yellow} \text{$C_o$} \\
 			\hline
 			0 & 0 & 0 & 0 & 0 \\
 			0 & 0 & 1 & 1 & 0 \\
@@ -96,7 +96,7 @@ innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{myblock}
 			1 & 1 & 1 & 1 & 1 \\
 			\hline
 		\end{tabular}
-		\caption{La tabella mostra la tavola di verità di un full adder. La prime tre colonne corrispondono ai agli stati logici delle variali logiche di ingresso (A), (B) e  carry in ($C_I$), mentre le ultime due i terminali di uscita della somma (S) e del carry out ($C_O$). }
+		\caption{La tabella mostra la tavola di verità di un full adder. La prime tre colonne corrispondono ai agli stati logici delle variali logiche di ingresso (A), (B) e  carry in ($C_I$), mentre le ultime due i terminali di uscita della somma (S) e del carry out ($C_o$). }
 		\label{tab:full_adder}
 	\end{table}
 	
@@ -105,17 +105,17 @@ innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{myblock}
 		S= \bar{C_i}\bar{A}B +\bar{C_i}A\bar{B}+C_i\bar{A}\bar{B}+C_iAB 
 	\end{equation}
 	\begin{equation}
-		C_O= \bar{C_i}AB +C_iA\bar{B}+C_i\bar{A}B+C_iAB 
+		C_o= \bar{C_i}AB +C_iA\bar{B}+C_i\bar{A}B+C_iAB 
 	\end{equation}
 	È possibile poi semplificare queste espressioni, la dimostrazione è presente in Appendice \ref{app:a}, ottenendo:
 	\begin{equation}
 		S= C_i \oplus A \oplus B 
 	\end{equation}
 	\begin{equation}
-		C_O= AB +C_i(A+B) 
+		C_o= AB +C_i(A+B) 
 	\end{equation}
 	Dove $\oplus$ è l'OR esclusivo (EXOR), operazione analoga al OR ma con la differenza che restituisce un valore nullo quando sia A che B valgono uno.
-	È possibile verificare la correttezza della relazione poiché $S$=1 quando, per A=0, B e $C_I$ sono diversi e quindi EXOR(B,$C_I$)=1 oppure A=1 e B e $C_I$ sono uguali, di conseguenza EXOR(B,$C_I$)=0. Invece $C_O$=1 quando $C_I$ =1 ed A e B sono diversi, riconducibile ad AND fra $C_i$ e EXOR tra A e B, oppure A e B sono uguali ad uno, corrispondente ad un AND fra A e B. Un possibile modo per realizzare quanto il relativo circuito è mostrato in Fig \ref{fig:circuito_fadder}. Nonostante la correttezza del risultato sul piano logico un circuito così realizzato nasconde delle problematiche nella non simultaneità di variazione dello stato dalle due uscite, per ovviare a tale ritardo si possono usare dei circuiti sommatori più complessi la cui trattazione esula dai nostri scopi, per maggiori informazioni si faccia riferimento a \cite{full_Adder}.
+	È possibile verificare la correttezza della relazione poiché $S$=1 quando, per A=0, B e $C_I$ sono diversi e quindi EXOR(B,$C_I$)=1 oppure A=1 e B e $C_I$ sono uguali, di conseguenza EXOR(B,$C_I$)=0. Invece $C_o$=1 quando $C_I$ =1 ed A e B sono diversi, riconducibile ad AND fra $C_i$ e EXOR tra A e B, oppure A e B sono uguali ad uno, corrispondente ad un AND fra A e B. Un possibile modo per realizzare quanto il relativo circuito è mostrato in Fig \ref{fig:circuito_fadder}. Nonostante la correttezza del risultato sul piano logico un circuito così realizzato nasconde delle problematiche nella non simultaneità di variazione dello stato dalle due uscite, per ovviare a tale ritardo si possono usare dei circuiti sommatori più complessi la cui trattazione esula dai nostri scopi, per maggiori informazioni si faccia riferimento a \cite{full_Adder}.
 	
 	Ci si è poi concentrati sulla creazione di circuiti logici OR e AND in logica positiva mediante l'impiego di diodi al silicio. Queste due operazioni sono, insieme al NOT, per convenzione, le tre operazioni logiche fondamentali dell'algebra di Boole 
 	
@@ -142,23 +142,31 @@ innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{myblock}
 	
 	
 	\subsection{Dati}
-	Utilizzando il multimetro si è misurata la differenza di potenziale ai capi dei potenziometri nella configurazione impiegata per le valutazioni sulla semi-ampiezza ed i tempi di risalita; i valori impostati erano di (-2.0020 $\pm$ 0.0070) V e (2.0010 $\pm$ 0.0070) V. Invece, per la valutazione dell'onda asimmetrica, il valore della d.d.p in uno dei due rami con i diodi è stato fissato a (1.5000 $\pm$ 0.0060) V. Per tutte queste misure, l'incertezza è stata calcolata come da specifiche strumentali sommando 1 digit a 0.3\% sulla lettura, con un fondo-scala da 6 V e una risoluzione di 0.001 V. 
+	Utilizzando il multimetro si è misurata la differenza di potenziale ai capi dei potenziometri. Per tutte queste misure, l'incertezza è stata calcolata come da specifiche strumentali sommando 1 digit a 0.3\% sulla lettura, con un fondo-scala da 6 V e una risoluzione di 0.001 V. 
+	
+	\begin{itemize}
+		\item Multimetro digitale FLUKE 77, le cui incertezze sono:
+		\begin{itemize}
+			\item[-] Come volmetro: 0.3\% + 1 digit sia nella configurazione a f.s. 6.000 V con risoluzione 0.001 V sia a f.s. 600.0 mV con risoluzione 0.1 mV.
+			\item[-] Come resistometro: 0.5\% + 1 digit nella configurazione a f.s. 6.000 k$\Omega$ con risoluzione 0.001 k$\Omega$.
+		\end{itemize}
+	\end{itemize}
 	
 	
 	
-	Lo stato logico basso è di (89.50 $\pm$ 0.37) mV, mentre quello alto è stato di (3.967 $\pm$ 0.021)V
+	In entrata, lo stato logico basso fornito è di (89.50 $\pm$ 0.37) mV, mentre quello alto è stato di (3.967 $\pm$ 0.021)V
 	\begin{table}
-		
-	\begin{tabular}{|c|c|c|}
-		\hline
-		\cellcolor{yellow} \text{A} & \cellcolor{yellow} \text{B}  & \cellcolor{yellow} \text{A+B} \\
-		\hline
-		0 & 0 & 109.80 $\pm$ 0.43 mV \\
-		0 & 1 & 4.029 $\pm$ 0.021 V \\
-		1 & 0 & 4.039 $\pm$ 0.021 V \\	
-		1 & 1 & 4.026 $\pm$ 0.021 V \\
-		\hline
-			\end{tabular}
+		\centering
+		\begin{tabular}{|c|c|c|}
+			\hline
+			\cellcolor{yellow} \text{A} & \cellcolor{yellow} \text{B}  & \cellcolor{yellow} \text{A+B} \\
+			\hline
+			0 & 0 & 109.80 $\pm$ 0.43 mV \\
+			0 & 1 & 4.029 $\pm$ 0.013 V \\
+			1 & 0 & 4.039 $\pm$ 0.013 V \\	
+			1 & 1 & 4.026 $\pm$ 0.013 V \\
+			\hline
+		\end{tabular}
 		\caption{La tabella riassume le misure di tensioni ottenute per L'OR con circuito integrato.}
 		\label{tab:or_mis}
 	\end{table}
@@ -170,12 +178,12 @@ innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{myblock}
 			\centering
 			\begin{tabular}{|c|c|c|}
 				\hline
-				\cellcolor{yellow} \text{A} & \cellcolor{yellow} \text{B}  & \cellcolor{yellow} \text{AB} \\
+				\cellcolor{yellow} \text{A} & \cellcolor{yellow} \text{B}  & \cellcolor{yellow} \text{A $\cdot$ B} \\
 				\hline
 				0 & 0 & 240.00 $\pm$ 0.82 mV \\
 				0 & 1 & 239.40 $\pm$ 0.82 mV \\
 				1 & 0 & 235.20 $\pm$ 0.81 mV \\	
-				1 & 1 & 3.589 $\pm$ 0.019 V\\
+				1 & 1 & 3.589 $\pm$ 0.012 V\\
 				\hline
 			\end{tabular}
 			\caption{La tabella riassume le misure di tensioni ottenute per l'AND con circuito integrato nella prima porta considerata.}
@@ -186,12 +194,12 @@ innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{myblock}
 			\centering
 			\begin{tabular}{|c|c|c|}
 				\hline
-				\cellcolor{yellow} \text{A} & \cellcolor{yellow} \text{B}  & \cellcolor{yellow} \text{AB} \\
+				\cellcolor{yellow} \text{A} & \cellcolor{yellow} \text{B}  & \cellcolor{yellow} \text{A $\cdot$ B} \\
 				\hline
 				0 & 0 & 248.90 $\pm$ 0.85 mV \\
 				0 & 1 & 260.80 $\pm$ 0.88 mV \\
 				1 & 0 & 251.30 $\pm$ 0.85 mV \\	
-				1 & 1 & 3.584 $\pm$ 0.019 V \\
+				1 & 1 & 3.584 $\pm$ 0.012 V \\
 				\hline
 			\end{tabular}
 			\caption{La tabella riassume le misure di tensioni ottenute per l'AND con circuito integrato nella seconda porta considerata.}
@@ -210,8 +218,8 @@ innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{myblock}
 				\cellcolor{yellow} \text{A} & \cellcolor{yellow} \text{B}  & \cellcolor{yellow} \text{A $\oplus$ B} \\
 				\hline
 				0 & 0 & 261.70 $\pm$ 0.89 mV \\
-				0 & 1 & 4.945 $\pm$ 0.026 V\\
-				1 & 0 & 4.960 $\pm$ 0.026 V\\	
+				0 & 1 & 4.945 $\pm$ 0.016 V\\
+				1 & 0 & 4.960 $\pm$ 0.016 V\\	
 				1 & 1 & 298.6 $\pm$ 1.0 mV\\
 				\hline
 			\end{tabular}	
@@ -226,8 +234,8 @@ innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{myblock}
 				\cellcolor{yellow} \text{A} & \cellcolor{yellow} \text{B}  & \cellcolor{yellow} \text{A $\oplus$ B} \\
 				\hline
 				0 & 0 & 259.40 $\pm$ 0.88 mV \\
-				0 & 1 & 4.979 $\pm$ 0.026 V \\
-				1 & 0 & 4.979 $\pm$ 0.026 V \\	
+				0 & 1 & 4.979 $\pm$ 0.016 V \\
+				1 & 0 & 4.979 $\pm$ 0.016 V \\	
 				1 & 1 & 299.2 $\pm$ 1.0 mV \\
 				\hline
 			\end{tabular}
@@ -240,23 +248,23 @@ innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{myblock}
 	
 	\begin{table}
 		\centering
-	\begin{tabular}{|c|c|c||c|c|}
-		
-		\hline
-		\cellcolor{yellow} \text{A} & \cellcolor{yellow} \text{B}  & \cellcolor{yellow} \text{$C_i$} & \cellcolor{yellow} \text{$S$} & \cellcolor{yellow} \text{$C_O$} \\
-		\hline
-		0 & 0 & 0 & 263.00 $\pm$ 0.89 mV & 86.80 $\pm$ 0.36 mV \\
-		0 & 0 & 1 & 4.973 $\pm$ 0.026 V & 85.40 $\pm$ 0.36 mV \\
-		0 & 1 & 0 & 4.979 $\pm$ 0.026 V & 85.40 $\pm$ 0.36 mV \\
-		0 & 1 & 1 & 296.90 $\pm$ 0.99 mV & 4.069 $\pm$ 0.021 V \\
-		1 & 0 & 0 & 4.979 $\pm$ 0.026 V & 84.70 $\pm$ 0.35 mV \\
-		1 & 0 & 1 & 297.00 $\pm$ 0.99 mV & 4.072 $\pm$ 0.021 V \\
-		1 & 1 & 0 & 263.30 $\pm$ 0.89 mV & 4.069 $\pm$ 0.021 V\\
-		1 & 1 & 1 & 4.977 $\pm$ 0.026 V & 4.072 $\pm$ 0.021 V \\
-		\hline
-	\end{tabular}
-	\caption{La tabella mostra le misure di tensione relative alla tavola di verità del full adder.}
-	\label{tab:fa_mis}	
+		\begin{tabular}{|c|c|c||c|c|}
+			
+			\hline
+			\cellcolor{yellow} \text{A} & \cellcolor{yellow} \text{B}  & \cellcolor{yellow} \text{$C_i$} & \cellcolor{yellow} \text{$S$} & \cellcolor{yellow} \text{$C_o$} \\
+			\hline
+			0 & 0 & 0 & 263.00 $\pm$ 0.89 mV & 86.80 $\pm$ 0.36 mV \\
+			0 & 0 & 1 & 4.973 $\pm$ 0.016 V & 85.40 $\pm$ 0.36 mV \\
+			0 & 1 & 0 & 4.979 $\pm$ 0.016 V & 85.40 $\pm$ 0.36 mV \\
+			0 & 1 & 1 & 296.90 $\pm$ 0.99 mV & 4.069 $\pm$ 0.013 V \\
+			1 & 0 & 0 & 4.979 $\pm$ 0.016 V & 84.70 $\pm$ 0.35 mV \\
+			1 & 0 & 1 & 297.00 $\pm$ 0.99 mV & 4.072 $\pm$ 0.013 V \\
+			1 & 1 & 0 & 263.30 $\pm$ 0.89 mV & 4.069 $\pm$ 0.013 V\\
+			1 & 1 & 1 & 4.977 $\pm$ 0.016 V & 4.072 $\pm$ 0.021 V \\
+			\hline
+		\end{tabular}
+		\caption{La tabella mostra le misure di tensione relative alla tavola di verità del full adder.}
+		\label{tab:fa_mis}	
 	\end{table}
 	
 	
@@ -272,9 +280,9 @@ innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{myblock}
 				\cellcolor{yellow} \text{A} & \cellcolor{yellow} \text{B}  & \cellcolor{yellow} \text{A + B} \\
 				\hline
 				0 & 0 & 400.0 $\pm$ 1.3 mV \\
-				0 & 1 & 3.037 $\pm$ 0.016 V\\
-				1 & 0 & 3.036 $\pm$ 0.016 V\\	
-				1 & 1 & 3.067 $\pm$ 0.016 V \\
+				0 & 1 & 3.037 $\pm$ 0.010 V\\
+				1 & 0 & 3.036 $\pm$ 0.010 V\\	
+				1 & 1 & 3.067 $\pm$ 0.010 V \\
 				\hline
 			\end{tabular}	
 			\caption{La tabella riassume le misure di tensioni ottenute per il circuito OR realizzato con i diodi.}
@@ -290,7 +298,7 @@ innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{myblock}
 				0 & 0 & 640.0 $\pm$ 2.0 mV \\
 				0 & 1 & 673.0 $\pm$ 2.1 mV \\
 				1 & 0 & 672.0 $\pm$ 2.1 mV \\	
-				1 & 1 & 5.008 $\pm$ 0.026 V \\
+				1 & 1 & 5.008 $\pm$ 0.016 V \\
 				\hline
 			\end{tabular}
 			\caption{La tabella riassume le misure di tensioni ottenute per il circuito AND realizzato con i diodi.}
@@ -300,25 +308,26 @@ innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{myblock}
 	
 	\FloatBarrier
 	\section{Conclusioni}
+	Si nota come tutti i valori dello stato basso sono risultati inferitori al valore massimo dello stato accettato sia nel caso della famiglia TTL che in DL. Inoltre anche nel caso dello stato logico alto i valori misurati sono risultati essere superiori al valore minimo accettato per ambedue le famiglie logiche. Si fa notare inoltre come per i valori di tensione attesi essere pari al $V_\gamma$ del diodo al silicio sia risultato essere compatibile con i valori previsti dal modello. 
 	
-	\section{Appendice} \ref{app:a}
+	\section{Appendice} \label{app:a}
 	Partendo da:
-\begin{equation}
-	\begin{aligned}
-		S &= \bar{C_i}\bar{A}B + \bar{C_i}A\bar{B} + C_i\bar{A}\bar{B} + C_iAB \\
-		&= \bar{C_i}(\bar{A}B + A\bar{B}) + C_i(AB + \bar{A}\bar{B}) \\
-		&= \bar{C_i}(A \oplus B) + C_i(A \odot B) \\
-		&= \bar{C_i}(A \oplus B) + C_i\overline{(A \oplus B)} \\
-		&= C_i \oplus A \oplus B
-	\end{aligned}
-\end{equation}
-Dove $\odot$ indica L'EXNOR.
-
+	\begin{equation}
+		\begin{aligned}
+			S &= \bar{C_i}\bar{A}B + \bar{C_i}A\bar{B} + C_i\bar{A}\bar{B} + C_iAB \\
+			&= \bar{C_i}(\bar{A}B + A\bar{B}) + C_i(AB + \bar{A}\bar{B}) \\
+			&= \bar{C_i}(A \oplus B) + C_i(A \odot B) \\
+			&= \bar{C_i}(A \oplus B) + C_i\overline{(A \oplus B)} \\
+			&= C_i \oplus A \oplus B
+		\end{aligned}
+	\end{equation}
+	Dove $\odot$ indica L'EXNOR.
+	
 	
 	Invece per il carry out
 	\begin{equation}
 		\begin{aligned}
-			C_O &= \bar{C_i}AB + C_iA\bar{B} + C_i\bar{A}B + C_iAB \\
+			C_o &= \bar{C_i}AB + C_iA\bar{B} + C_i\bar{A}B + C_iAB \\
 			&= AB(\bar{C_i} + C_i) + C_i(\bar{A}B + A\bar{B}) \\
 			&= AB + C_i(A \oplus B)
 		\end{aligned}
